@@ -33,7 +33,8 @@
 					<productCard
 						:product="product.name"
 						:description="product.description"
-						:price="product.price"	
+						:price="product.price"
+						:category="product.category"
 					/>
 				</div>
 			</div>
