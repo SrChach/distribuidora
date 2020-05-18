@@ -16,7 +16,7 @@
             <div class="content">
                 {{ description }}
                 <br>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                <b>Categoria:</b> {{ category }}
             </div>
         </div>
     </div>
@@ -40,6 +40,10 @@ export default {
         price: {
             type: Number,
             default: 11.10
+        },
+        category: {
+            type: String,
+            default: 'Pollo'
         }
     }
 }
