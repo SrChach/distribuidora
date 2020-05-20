@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import slider from '@/views/About.vue'
+import slider from '@/components/Slider.vue'
 export default {
   components: {
     'slider': slider
