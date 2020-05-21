@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div>
+      <navbar/>
       <slider/>
     </div>
     <div id="nav">
@@ -13,9 +14,12 @@
 
 <script>
 import slider from '@/components/Slider.vue'
+import navbar from '@/components/Header.vue'
+
 export default {
   components: {
-    'slider': slider
+    'slider': slider,
+    'navbar': navbar
   }
 }
 </script>
