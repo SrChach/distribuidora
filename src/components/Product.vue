@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-image">
             <figure class="image is-4by3">
-                <img :src="image" alt="Placeholder image">
+                <img :src="require(`@/assets/${image}`)" alt="Placeholder image">
             </figure>
         </div>
         <div class="card-content">
@@ -27,7 +27,7 @@ export default {
     props: {
         image: {
             type: String,
-            default: 'https://bulma.io/images/placeholders/1280x960.png'
+            default: 'default_1280x960.png'
         },
         product: {
             type: String,
