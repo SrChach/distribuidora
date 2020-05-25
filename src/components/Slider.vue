@@ -17,11 +17,11 @@ export default {
     data(){
         return {
             carousels: [
-                { text: 'Slide 1', color: 'primary' },
-                { text: 'Slide 2', color: 'info' },
-                { text: 'Slide 3', color: 'success' },
-                { text: 'Slide 4', color: 'warning' },
-                { text: 'Slide 5', color: 'danger' }
+                { text: 'Imagen 1', color: 'danger' },
+                { text: 'Imagen 2', color: 'info' },
+                { text: 'Imagen 3', color: 'primary' },
+                { text: 'Imagen 4', color: 'success' },
+                { text: 'Imagen 5', color: 'warning' }
             ]
         }
     }

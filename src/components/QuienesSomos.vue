@@ -2,8 +2,8 @@
     
     <div class="columns">
         <div class="column">
-            <h1 class="title is-6 is-mega-menu-title">Ejemplo de contenido</h1>
-            <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+            <span class="title is-6 is-mega-menu-title">Ejemplo de contenido</span>
+            <a class="navbar-item" href="#">
                 <div class="navbar-content">
                     <p>
                         <small class="has-text-info">03 Aug 2017</small>
@@ -11,7 +11,7 @@
                     <p>Característica</p>
                 </div>
             </a>
-            <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+            <a class="navbar-item" href="#">
                 <div class="navbar-content">
                     <p>
                         <small class="has-text-info">03 Aug 2017</small>
@@ -19,7 +19,7 @@
                     <p>Otra característica</p>
                 </div>
             </a>
-            <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+            <a class="navbar-item" href="#">
                 <div class="navbar-content">
                     <p>
                         <small class="has-text-info">03 Aug 2017</small>
@@ -28,10 +28,21 @@
                 </div>
             </a>
         </div>
-        <div class="column">Las columnas</div>
-        <div class="column">que tu quieras</div>
-        <div class="column">aqui</div>
+        <div class="column">
+            <span class="title is-6 is-mega-menu-title">
+                Las columnas
+            </span>
+        </div>
+        <div class="column">
+            <span class="title is-6 is-mega-menu-title">
+                que tu quieras
+            </span>
+        </div>
+        <div class="column">
+            <span class="title is-6 is-mega-menu-title">
+                aqui
+            </span>
+        </div>
     </div>
-
 
 </template>
