@@ -2,11 +2,16 @@
     <b-navbar type="is-primary" fixed-top>
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
+            <figure>
                 <img
+                    class="is-rounded"
                     src="@/assets/conchita.png"
                     alt="Logo de Distribuidora Conchita"
                 >
-                <b>Distribuidora Conchita</b>
+            </figure>
+                
+                <b class="has-padding-5 has-margin-left-20">Distribuidora 
+                    <br> Conchita</b>
             </b-navbar-item>
         </template>
         <template slot="start">
@@ -59,5 +64,9 @@ export default {
 .navbar-item.is-mega .is-mega-menu-title {
 	margin-bottom: 0;
 	padding: 0.375rem 1rem;
+}
+
+img {
+    height: 50;
 }
 </style>
