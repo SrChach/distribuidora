@@ -3,9 +3,14 @@
     <b-carousel>
         <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
             <section :class="`hero is-medium is-${carousel.color}`">
-                <div class="hero-body has-text-centered">
-                    <h1 class="title">{{carousel.text}}</h1>
-                </div>
+                <!-- <div class="hero-body has-text-centered"> -->
+                    <div class="image is-3by1">
+                        <!-- <h1 class="title">{{carousel.text}}</h1> -->
+                        <img :src="carousel.rutaImage" alt="">
+                        
+                    </div>
+                    
+                <!-- </div> -->
             </section>
         </b-carousel-item>
     </b-carousel>
@@ -17,11 +22,11 @@ export default {
     data(){
         return {
             carousels: [
-                { text: 'Imagen 1', color: 'danger' },
-                { text: 'Imagen 2', color: 'info' },
-                { text: 'Imagen 3', color: 'primary' },
-                { text: 'Imagen 4', color: 'success' },
-                { text: 'Imagen 5', color: 'warning' }
+                { text: 'Pollo', rutaImage: require('../assets/carrusel/img_uno.jpg') },
+                { text: 'Huevos', rutaImage: require('../assets/carrusel/img_dos.jpeg') },
+                { text: 'Carne', rutaImage: require('../assets/carrusel/img_tres.jpeg') },
+                { text: 'Pescado', rutaImage: require('../assets/carrusel/img_cuatro.jpeg') },
+                { text: 'Pescado', rutaImage: require('../assets/carrusel/img_cinco.jpeg') }
             ]
         }
     }
