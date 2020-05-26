@@ -35,6 +35,7 @@
 						:description="product.description"
 						:price="product.price"
 						:category="product.category"
+						:category_image="found_featured_image(product.category)"
 					/>
 				</div>
 			</div>
@@ -71,7 +72,13 @@ export default {
 			selected_category: 'Todas',
 			selected_price: 500,
 			max_price: 0,
-			min_price: 0
+			min_price: 0,
+			featured_categories: [
+				{
+					category: 'Pollo',
+					image: 'featured_categories/Pollo.png'
+				}
+			]
 		}
 	},
 	methods: {
@@ -82,6 +89,12 @@ export default {
 				.map(category_name => {
 					return { selected: true, name: category_name } // Convierte a objetos
 				})
+		},
+		found_featured_image: function (category) {
+			let founded = this.featured_categories.find(o => o.category == category)
+			if (typeof(founded) == 'undefined')
+				return ''
+			return founded.image
 		},
 		get_max_price: function (products) {
 			let array_of_prices = products.map(product => product.price)

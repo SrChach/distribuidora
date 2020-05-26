@@ -7,6 +7,11 @@
         </div>
         <div class="card-content">
             <div class="media">
+                <div class="media-left" v-if="category_image != '' && typeof(category_image) === 'string'">
+                    <figure class="image is-48x48">
+                        <img :src="require(`@/assets/${category_image}`)" :alt="category + ' image'">
+                    </figure>
+                </div>
                 <div class="media-content">
                     <p class="title is-4">{{ product }}</p>
                     <p class="subtitle is-6">${{ price }}</p>
@@ -44,6 +49,10 @@ export default {
         category: {
             type: String,
             default: 'Pollo'
+        },
+        category_image: {
+            type: String,
+            default: null
         }
     }
 }
