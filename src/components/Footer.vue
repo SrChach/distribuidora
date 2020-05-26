@@ -1,5 +1,5 @@
 <template>
-    <div class="footer is-success has-text-light">
+    <div class="footer has-background-light">
         <div class="container">
             <div class="columns">
                 <div class="column is-6">
@@ -11,7 +11,29 @@
                 </div>
 
                 <div class="column is-6">
-                    Enviar Correo/Lo que quieras poner aqui
+                    <form class="contact-form" @submit.prevent="sendEmail">
+                        <h2><b> Cotizacones O Informacion , Contactanos:</b></h2>
+                        <span>Mandanos un Correo con tus datos y nos comunicaremos contigo a la brevedad.</span>
+                        <br>
+                        <br>
+
+                        <label>Nombre</label>
+                        <input class="input is-focused" type="text" name="user_name" placeholder="Nombre">
+                        <br>
+                        <label>Telefono</label>
+                        <input class="input is-focused" type="number" name="user_name" placeholder="Telefono">
+
+                        <br>
+                        <label>Correo</label>
+                        <br>
+                        <input class="input is-focused" type="text" name="user_email">
+
+                        <label>Mensaje</label>
+                        <br>
+                        <textarea class="textarea" name="message"></textarea>
+                        <br>
+                        <input type="submit" value="Send">
+                    </form>
                 </div>
 
             </div>
@@ -25,6 +47,20 @@ import mymap from '@/components/Map.vue'
 export default {
     components: {
         'my-map': mymap
-    }
+    },
+    methods:
+        {
+
+        }
 }
 </script>
+<style>
+
+    .footer{
+        background-color: #DAEAA7
+
+    }
+
+
+
+</style>
