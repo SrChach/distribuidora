@@ -1,3 +1,4 @@
+ja
 <template>
     <div class="footer has-background-light">
         <div class="container">
