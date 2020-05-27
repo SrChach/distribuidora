@@ -37,7 +37,7 @@
                 <div class="buttons">
                     <b-button tag="router-link"
                         to="/about"
-                        type="is-success">
+                        type="is-warning">
                         Mas informacion
                     </b-button>
                 </div>
