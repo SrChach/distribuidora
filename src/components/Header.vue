@@ -2,16 +2,18 @@
     <b-navbar type="is-primary" fixed-top>
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
-            <figure>
+            <figure class="image is-96x96">
                 <img
                     class="is-rounded"
                     src="@/assets/conchita.png"
                     alt="Logo de Distribuidora Conchita"
                 >
             </figure>
-                
-                <b class="has-padding-5 has-margin-left-20">Distribuidora 
-                    <br> Conchita</b>
+            <div class="ejemplo">
+                <b>
+                    Distribuidora<br>Conchita
+                </b>
+            </div>
             </b-navbar-item>
         </template>
         <template slot="start">
@@ -65,8 +67,11 @@ export default {
 	margin-bottom: 0;
 	padding: 0.375rem 1rem;
 }
+.navbar-item img {
+    max-height: 6rem !important;
+}
 
-img {
-    height: 50;
+.ejemplo {
+    padding-left: 1rem;
 }
 </style>
