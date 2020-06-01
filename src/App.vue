@@ -49,7 +49,8 @@ $colors: (
     "twitter": ($twitter, $twitter-invert)
 );
 $footer-color: true;
-$footer-background-color: $dark;
+$footer-background-color: $light;
+// $footer-background-color: #DAEAA7;
 
 // Links
 $link: $primary;

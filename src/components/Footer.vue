@@ -1,6 +1,5 @@
-ja
 <template>
-    <div class="footer has-background-light">
+    <footer class="footer">
         <div class="container">
             <div class="columns">
                 <div class="column is-6">
@@ -33,13 +32,15 @@ ja
                         <br>
                         <textarea class="textarea" name="message"></textarea>
                         <br>
-                        <input type="submit" value="Send">
+                        <button class="button is-warning is-fullwidth">
+                            Send
+                        </button>
                     </form>
                 </div>
 
             </div>
         </div>
-    </div>
+    </footer>
 </template>
 
 <script>
@@ -48,20 +49,6 @@ import mymap from '@/components/Map.vue'
 export default {
     components: {
         'my-map': mymap
-    },
-    methods:
-        {
-
-        }
+    }
 }
 </script>
-<style>
-
-    .footer{
-        background-color: #DAEAA7
-
-    }
-
-
-
-</style>

@@ -1,5 +1,5 @@
 <template>
-    <b-navbar type="is-primary" fixed-top>
+    <b-navbar type="is-primary" fixed-top is-active>
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
             <figure class="image is-96x96">
@@ -17,9 +17,15 @@
             </b-navbar-item>
         </template>
         <template slot="start">
-            <b-navbar-item tag="router-link" :to="{ path: '/' }">
+            <b-navbar-item tag="router-link" :to="{ path: '/products' }">
                 Productos
             </b-navbar-item>
+            <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                Mas información
+            </b-navbar-item>
+        </template>
+
+        <template slot="end">
             <div class="navbar-item has-dropdown is-hoverable is-mega">
                 <div class="navbar-link">
                     Quienes somos
@@ -30,18 +36,6 @@
                     </div>
                 </div>
             </div>
-        </template>
-
-        <template slot="end">
-            <b-navbar-item tag="div">
-                <div class="buttons">
-                    <b-button tag="router-link"
-                        to="/about"
-                        type="is-warning">
-                        Mas informacion
-                    </b-button>
-                </div>
-            </b-navbar-item>
         </template>
     </b-navbar>
 
