@@ -1,5 +1,5 @@
 <template>
-	<l-map :style="'height: ' + height + 'px'" :zoom="zoom" :center="coordinates">
+	<l-map :style="'height: ' + height + 'px; z-index: 0'" :zoom="zoom" :center="coordinates">
 		<l-tile-layer :url="url"></l-tile-layer>
 		<l-marker :lat-lng="coordinates" ></l-marker>
 	</l-map>
