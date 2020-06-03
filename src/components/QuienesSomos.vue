@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-    <div class="columns is-vcentered">
+    <div class="columns is-vcentered p2margen">
         <div class="column is-full-mobile is-one-third-tablet is-one-third-desktop is-one-third-widescreen is-one-third-fullhd">
                     <br>
                     <figure class="image is-2by1">
@@ -54,4 +54,7 @@
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 } */
+.p2margen{
+    padding-top: 2rem;
+}
 </style>
