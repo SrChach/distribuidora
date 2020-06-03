@@ -2,10 +2,10 @@
     <div class="container">
     <div class="columns is-vcentered p2margen">
         <div class="column is-full-mobile is-one-third-tablet is-one-third-desktop is-one-third-widescreen is-one-third-fullhd">
-                    <br>
-                    <figure class="image is-2by1">
-                        <img src="../assets/carrusel/img_cinco.jpeg" alt="imagen 5">
-                    </figure>
+            <br>
+            <figure class="image is-2by1">
+                <img src="../assets/carrusel/img_cinco.jpeg" alt="imagen 5">
+            </figure>
         </div>
         <div class="column is-full-mobile is-one-third-tablet is-one-third-desktop is-one-third-widescreen is-one-third-fullhd">
             <span class="title is-6 is-mega-menu-title">
@@ -13,26 +13,26 @@
                      SOMOS:
                  </p>
              </span>
-                        <a class="has-text-info is-size-6-mobile">
-                            <p class="has-text-centered has-text-weight-bold">
-                                Empresa 100% mexicana
-                            </p>
-                        </a>
-                        <a class="has-text-black is-size-7-mobile">
-                            <p class="has-text-justified is-family-secondary p1margen">
-                                Dedicada a la distribución de productos alimenticios 
-                                y especialistas en restaurantes, restaurantes gourmet,
-                                comedores industriales y ventas por mayore.
-                                Ofrecemos un servicio de calidad en cada uno de nuestros
-                                productos ya que sabemos lo importante que es una
-                                alimentación sana para todo ser humano.
-                            </p>
-                        </a>
+            <a class="has-text-info is-size-6-mobile">
+                <p class="has-text-centered has-text-weight-bold">
+                    Empresa 100% mexicana
+                </p>
+            </a>
+            <a class="has-text-black is-size-7-mobile">
+                <p class="has-text-justified is-family-secondary p1margen">
+                    Dedicada a la distribución de productos alimenticios 
+                    y especialistas en restaurantes, restaurantes gourmet,
+                    comedores industriales y ventas por mayore.
+                    Ofrecemos un servicio de calidad en cada uno de nuestros
+                    productos ya que sabemos lo importante que es una
+                    alimentación sana para todo ser humano.
+                </p>
+            </a>
         </div>
         <div class="column is-full-mobile is-one-thrid-tablet is-one-third-desktop is-one-third-widescreen is-one-third-fullhd">
-                    <figure class="image is-2by1">
-                        <img src="../assets/carrusel/img_dos.jpeg" alt="imagen 5">
-                    </figure>
+            <figure class="image is-2by1">
+                <img src="../assets/carrusel/img_dos.jpeg" alt="imagen 5">
+            </figure>
         </div>
     </div>
 
@@ -44,16 +44,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
 }
-/* .contenedor{
-    position: relative;
-    display: inline-block;
-    text-align: center;
-}
-.p1position{
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-} */
+
 .p2margen{
     padding-top: 2rem;
 }
