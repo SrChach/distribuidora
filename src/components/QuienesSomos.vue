@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-    <div class="columns is-vcentered p2margen">
+    <div class="columns is-vcentered margin-updown-2">
         <div class="column is-full-mobile is-one-third-tablet is-one-third-desktop is-one-third-widescreen is-one-third-fullhd">
             <br>
             <figure class="image is-2by1">
@@ -45,7 +45,8 @@
     padding-right: 1rem;
 }
 
-.p2margen{
-    padding-top: 2rem;
+.margin-updown-2{
+    margin-top: 2rem;
+    margin-bottom: 2rem !important;
 }
 </style>
