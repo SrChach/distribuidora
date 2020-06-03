@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="columns">
                 <div class="column is-6">

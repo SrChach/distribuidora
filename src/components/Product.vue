@@ -20,8 +20,6 @@
 
             <div class="content">
                 {{ description }}
-                <br>
-                <b>Categoria:</b> {{ category }}
             </div>
         </div>
     </div>

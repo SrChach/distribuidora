@@ -1,20 +1,15 @@
 <template>
-  <div class="about">
-    <b-carousel>
-        <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-            <section :class="`hero is-medium is-${carousel.color}`">
-                <!-- <div class="hero-body has-text-centered"> -->
+    <div class="about" id="top">
+        <b-carousel>
+            <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
+                <section :class="`hero is-medium is-${carousel.color}`">
                     <div class="image is-3by1">
-                        <!-- <h1 class="title">{{carousel.text}}</h1> -->
                         <img :src="carousel.rutaImage" alt="">
-                        
                     </div>
-                    
-                <!-- </div> -->
-            </section>
-        </b-carousel-item>
-    </b-carousel>
-  </div>
+                </section>
+            </b-carousel-item>
+        </b-carousel>
+    </div>
 </template>
 
 <script>

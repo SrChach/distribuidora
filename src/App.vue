@@ -4,7 +4,9 @@
       <navbar/>
       <slider/>
     </div>
-    <router-view/>
+    <div id="main-content">
+      <router-view/>
+    </div>
     <custom-footer/>
   </div>
 </template>
@@ -66,5 +68,9 @@ $link-focus-border: $primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 </style>
