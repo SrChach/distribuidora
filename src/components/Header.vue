@@ -5,7 +5,7 @@
             <figure class="image is-96x96">
                 <img
                     class="is-rounded"
-                    src="@/assets/conchita.png"
+                    src="@/assets/conchitalogo.jpeg"
                     alt="Logo de Distribuidora Conchita"
                 >
             </figure>

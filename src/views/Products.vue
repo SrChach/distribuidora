@@ -31,6 +31,7 @@
 					v-show="filtered.includes(product.id)"
 				>
 					<productCard
+						:image="product.path"
 						:product="product.name"
 						:description="product.description"
 						:price="product.price"
