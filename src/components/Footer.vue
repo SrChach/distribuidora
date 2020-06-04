@@ -14,29 +14,35 @@
                     <form class="contact-form" @submit.prevent="funcion(nombre,correo,mensaje, telefono)">
                         <h2><b> Cotizacones O Informacion , Contactanos:</b></h2>
                         <span>Mandanos un Correo con tus datos y nos comunicaremos contigo a la brevedad.</span>
-                        <br>
-                        <br>
+                        <br><br>
 
                         <label>Nombre</label>
-                        <input v-model="nombre"
-                        class="input is-focused" type="text" name="user_name" placeholder="Nombre">
-                        <br>
-                        <label>Telefono</label>
-                        <input v-model="telefono" class="input is-focused" type="number" name="user_name" placeholder="Telefono">
+                        <input
+                            class="input is-focused" type="text" placeholder="Tu nombre"
+                            v-model="nombre" required
+                        />
 
-                        <br>
+                        <label>Telefono</label>
+                        <input
+                            class="input is-focused" type="number" placeholder="Tu teléfono"
+                            v-model="telefono"
+                        />
+
                         <label>Correo</label>
-                        <br>
-                        <input v-model="correo"
-                        class="input is-focused" type="text" name="user_email">
+                        <input
+                            class="input is-focused" type="email" placeholder="ejemplo@correo.com"
+                            v-model="correo"
+                        />
 
                         <label>Mensaje</label>
+                        <textarea
+                            class="textarea is-focused" type="text" placeholder="Escribe tus mensajes, recomendaciones o pedidos aquí"
+                            v-model="mensaje" required
+                        />
                         <br>
-                        <textarea v-model="mensaje"
-                        class="textarea" name="message"></textarea>
-                        <br>
+
                         <button type="submit" class="button is-warning is-fullwidth">
-                            Send
+                            Enviar
                         </button>
                     </form>
                 </div>
@@ -61,15 +67,33 @@ export default {
         }
     },
     methods: {
-        funcion(nombre, correo, mensaje, telefono){
-            console.log(correo)
+        funcion(nombre, correo, mensaje, telefono) {
+            if (correo == '' && telefono == '') {
+                this.$buefy.dialog.alert({
+                    title: 'Sin modo de contacto',
+                    message: 'Necesitas dejar algún en el cual podamos contactarte!',
+                    type: 'is-warning'
+                })
+                return;
+            }
+
             this.$store.dispatch('send_mail', {
                 nombre: nombre,
                 telefono: telefono,
                 correo: correo,
                 mensaje: mensaje
             })
-            .then(() => alert('ok'))
+            .then(() => {
+                this.$buefy.dialog.alert({
+                    message: 'Correo enviado. Pronto nos pondremos en contacto con usted!',
+                    type: 'is-success'
+                })
+
+                this.nombre = ''
+                this.correo = ''
+                this.mensaje = ''
+                this.telefono = ''
+            })
             .catch((error) => alert(error))
         }
     }
