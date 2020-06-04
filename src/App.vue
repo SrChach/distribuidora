@@ -34,6 +34,8 @@ $primary: #832019;
 $primary-invert: findColorInvert($primary);
 $warning: #E3BE2C;
 $warning-invert: findColorInvert($warning);
+$success: #50871F;
+$success-invert: findColorInvert($success);
 $twitter: #4099FF;
 $twitter-invert: findColorInvert($twitter);
 
