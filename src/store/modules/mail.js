@@ -1,6 +1,5 @@
 import db  from '../../fire'
 
-
 const state = {
     valor: null
 }
@@ -11,10 +10,8 @@ const getters = {
 
 const actions = {
     send_mail({commit}, info){
-        console.log(info)
-        console.log('hola')
         {
-            return new Promise((resolve, reject) =>{
+            return new Promise((resolve, reject) => {
                 db.collection('mail').add({
                     to: 'link@distribuidoraconchita.com',
                     message: {
@@ -31,9 +28,9 @@ const actions = {
                     reject(error)
                 }))
             })
-            // const user = firebase.auth().currentUserreturn 
+            // const user = firebase.auth().currentUserreturn
+        }
     }
-}
 }
 
 const mutations = {
@@ -49,4 +46,3 @@ export default{
     actions,
     mutations
 }
-
