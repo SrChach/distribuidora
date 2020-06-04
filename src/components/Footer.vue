@@ -11,28 +11,31 @@
                 </div>
 
                 <div class="column is-6">
-                    <form class="contact-form" @submit.prevent="sendEmail">
+                    <form class="contact-form" @submit.prevent="funcion(nombre,correo,mensaje, telefono)">
                         <h2><b> Cotizacones O Informacion , Contactanos:</b></h2>
                         <span>Mandanos un Correo con tus datos y nos comunicaremos contigo a la brevedad.</span>
                         <br>
                         <br>
 
                         <label>Nombre</label>
-                        <input class="input is-focused" type="text" name="user_name" placeholder="Nombre">
+                        <input v-model="nombre"
+                        class="input is-focused" type="text" name="user_name" placeholder="Nombre">
                         <br>
                         <label>Telefono</label>
-                        <input class="input is-focused" type="number" name="user_name" placeholder="Telefono">
+                        <input v-model="telefono" class="input is-focused" type="number" name="user_name" placeholder="Telefono">
 
                         <br>
                         <label>Correo</label>
                         <br>
-                        <input class="input is-focused" type="text" name="user_email">
+                        <input v-model="correo"
+                        class="input is-focused" type="text" name="user_email">
 
                         <label>Mensaje</label>
                         <br>
-                        <textarea class="textarea" name="message"></textarea>
+                        <textarea v-model="mensaje"
+                        class="textarea" name="message"></textarea>
                         <br>
-                        <button class="button is-warning is-fullwidth">
+                        <button type="submit" class="button is-warning is-fullwidth">
                             Send
                         </button>
                     </form>
@@ -45,10 +48,30 @@
 
 <script>
 import mymap from '@/components/Map.vue'
-
 export default {
     components: {
         'my-map': mymap
+    },
+    data(){
+        return {
+            nombre: '',
+            correo: '',
+            mensaje: '',
+            telefono: ''
+        }
+    },
+    methods: {
+        funcion(nombre, correo, mensaje, telefono){
+            console.log(correo)
+            this.$store.dispatch('send_mail', {
+                nombre: nombre,
+                telefono: telefono,
+                correo: correo,
+                mensaje: mensaje
+            })
+            .then(() => alert('ok'))
+            .catch((error) => alert(error))
+        }
     }
 }
 </script>
