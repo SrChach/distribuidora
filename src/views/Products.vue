@@ -34,7 +34,6 @@
 						:image="product.path"
 						:product="product.name"
 						:description="product.description"
-						:price="product.price"
 						:category_image="found_featured_image(product.category)"
 					/>
 				</div>

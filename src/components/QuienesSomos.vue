@@ -21,10 +21,11 @@
                 <a class="has-text-black is-size-7-mobile">
                     <p class="has-text-justified is-family-secondary p1margen">
                         Dedicada a la distribución de productos alimenticios
-                        y especialistas en restaurantes, restaurantes gourmet,
-                        comedores industriales y ventas por mayore.
+                        y especialistas en Restaurantes, Restaurantes Gourmet,
+                        Comedores Industriales y ventas por mayoreo, con mas de 
+                        30 años de experiencia. <br>
                         Ofrecemos un servicio de calidad en cada uno de nuestros
-                        productos ya que sabemos lo importante que es una
+                        productos ya que sabemos la importancia que es una
                         alimentación sana para todo ser humano.
                     </p>
                 </a>
