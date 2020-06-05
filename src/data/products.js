@@ -1,6 +1,14 @@
 export default [
     {
-        id: 1,
+        id:1,
+        name: 'POLLO',
+        category: 'POLLO',
+        price: 0.0,
+        path: 'conchitalogo.jpeg',
+        description: ''
+    },
+    {
+        id: 2,
         name: 'Ala',
         category: 'Pollo',
         price: 0.0,
@@ -8,7 +16,7 @@ export default [
         description: ''
     },
     {
-        id: 2,
+        id: 3,
         name: 'Alitas Enchiladas',
         category: 'Pollo',
         price: 0.0,
@@ -16,7 +24,7 @@ export default [
         path: 'stockCatalogo/pollo/alitasenchiladas1.jpg'
     },
     {
-        id: 3,
+        id: 4,
         name: 'Alitas Naturales',
         category: 'Pollo',
         price: 0.0,
@@ -24,7 +32,7 @@ export default [
         path:'stockCatalogo/pollo/alitasnaturales2.jpg'
     },
     {
-        id: 4,
+        id: 5,
         name: 'Milanesa de Pollo',
         category: 'Pollo',
         price: 0.0,
@@ -32,7 +40,7 @@ export default [
         description: ''
     },
     {
-        id: 5,
+        id: 6,
         name: 'Carne Molida',
         category: 'Pollo',
         price: 0.0,
@@ -40,7 +48,7 @@ export default [
         description: ''
     },
     {
-        id: 6,
+        id: 7,
         name: 'Nuggets',
         category: 'Pollo',
         price: 0.0,
@@ -48,7 +56,7 @@ export default [
         description: ''
     },
     {
-        id: 7,
+        id: 8,
         name: 'Pechuga',
         category: 'Pollo',
         price: 0.0,
@@ -56,7 +64,7 @@ export default [
         description: ''
     },
     {
-        id: 8,
+        id: 9,
         name: 'Pollo Entero',
         category: 'Pollo',
         price: 0.0,
@@ -64,7 +72,7 @@ export default [
         path: 'stockCatalogo/pollo/pollo entero.jpeg'
     },
     {
-        id: 9,
+        id: 10,
         name: 'Pulpa',
         category: 'Pollo',
         price: 0.0,
@@ -72,7 +80,7 @@ export default [
         description: ''
     },
     {
-        id: 10,
+        id: 11,
         name: 'Retazo',
         category: 'Pollo',
         price: 0.0,
@@ -80,7 +88,7 @@ export default [
         description: ''
     },
     {
-        id: 11,
+        id: 12,
         name: 'Tender',
         category: 'Pollo',
         price: 0.0,
@@ -88,7 +96,7 @@ export default [
         description: ''
     },
     {
-        id: 12,
+        id: 13,
         name: 'Pierna y muslo',
         category: 'Pollo',
         price: 0.0,
@@ -98,6 +106,14 @@ export default [
     //carnes
     {
         id: 14,
+        name: 'CARNES',
+        category: 'Res',
+        price: 0.0,
+        path: 'conchitalogo.jpeg',
+        description: ''
+    },
+    {
+        id: 15,
         name: 'Arrachera',
         category: 'Res',
         price: 0.0,
@@ -105,7 +121,7 @@ export default [
         path: 'stockCatalogo/res/arrachera1.jpeg'
     },
     {
-        id: 15,
+        id: 16,
         name: 'Bistec de res',
         category: 'Res',
         price: 0.0,
@@ -113,7 +129,7 @@ export default [
         path: 'stockCatalogo/res/bistec de res1.jpeg'
     },
     {
-        id: 16,
+        id: 17,
         name: 'Cecina',
         category: 'Res',
         price: 0.0,
@@ -121,7 +137,7 @@ export default [
         path: 'stockCatalogo/res/cecina1.jpeg'
     },
     {
-        id: 17,
+        id: 18,
         name: 'Chambarete sin hueso',
         category: 'Res',
         price: 0.0,
@@ -129,7 +145,7 @@ export default [
         path: 'stockCatalogo/res/chamabarete s:hueso3.jpeg'
     },
     {
-        id: 18,
+        id: 19,
         name: 'Chambarete con hueso',
         category: 'Res',
         price: 0.0,
@@ -137,7 +153,7 @@ export default [
         path: 'stockCatalogo/res/chambarete c:hueso3.jpeg'
     },
     {
-        id: 19,
+        id: 20,
         name: 'Cowboy',
         category: 'Res',
         price: 0.0,
@@ -145,7 +161,7 @@ export default [
         path: 'stockCatalogo/res/cowboy1.jpeg'
     },
     {
-        id: 20,
+        id: 21,
         name: 'Falda',
         category: 'Res',
         price: 0.0,
@@ -153,7 +169,7 @@ export default [
         path: 'stockCatalogo/res/falda1.jpeg'
     },
     {
-        id: 21,
+        id: 22,
         name: 'Molida',
         category: 'Res',
         price: 0.0,
@@ -161,7 +177,7 @@ export default [
         path: 'stockCatalogo/res/molida .jpeg'
     },
     {
-        id: 22,
+        id: 23,
         name: 'New York',
         category: 'Res',
         price: 0.0,
@@ -169,7 +185,7 @@ export default [
         path: 'stockCatalogo/res/new york1.jpeg'
     },
     {
-        id: 23,
+        id: 24,
         name: 'Rib eye',
         category: 'Res',
         price: 0.0,
@@ -177,7 +193,7 @@ export default [
         path: 'stockCatalogo/res/rib eye1.jpeg'
     },
     {
-        id: 24,
+        id: 25,
         name: 'Tbone',
         category: 'Res',
         price: 0.0,
@@ -186,7 +202,15 @@ export default [
     },
     //cerdo
     {
-        id: 25,
+        id: 26,
+        name: 'CERDO',
+        category: 'Cerdo',
+        price: 0.0,
+        path: 'conchitalogo.jpeg',
+        description: ''
+    },
+    {
+        id: 27,
         name: 'Chicharron Prensado',
         category: 'Cerdo',
         price: 0.0,
@@ -194,7 +218,7 @@ export default [
         path: 'stockCatalogo/cerdo/chicharron2.jpeg'
     },
     {
-        id: 26,
+        id: 28,
         name: 'Chuleta Ahumada',
         category: 'Cerdo',
         price: 0.0,
@@ -202,7 +226,7 @@ export default [
         path: 'stockCatalogo/cerdo/chuleta ahumada.jpeg'
     },
     {
-        id: 27,
+        id: 29,
         name: 'Chuleta',
         category: 'Cerdo',
         price: 0.0,
@@ -210,7 +234,7 @@ export default [
         path: 'stockCatalogo/cerdo/chuletanatural3.jpeg'
     },
     {
-        id: 28,
+        id: 30,
         name: 'Espinazo',
         category: 'Cerdo',
         price: 0.0,
@@ -218,7 +242,7 @@ export default [
         description:''
     },
     {
-        id: 29,
+        id: 31,
         name: 'Longaniza',
         category: 'Cerdo',
         price: 0.0,
@@ -226,7 +250,7 @@ export default [
         description:''
     },
     {
-        id: 30,
+        id: 32,
         name: 'Carne Al Pastor',
         category: 'Cerdo',
         price: 0.0,
@@ -234,7 +258,7 @@ export default [
         description:''
     },
     {
-        id: 31,
+        id: 33,
         name: 'Pierna',
         category: 'Cerdo',
         price: 0.0,
@@ -242,7 +266,7 @@ export default [
         description:''
     },
     {
-        id: 32,
+        id: 34,
         name: 'Tocino',
         category: 'Cerdo',
         price: 0.0,
@@ -251,7 +275,15 @@ export default [
     },
     //frutas
     {
-        id: 33,
+        id: 35,
+        name: 'FRUTAS',
+        category: 'Frutas',
+        price: 0.0,
+        path: 'conchitalogo.jpeg',
+        description: ''
+    },
+    {
+        id: 36,
         name: 'Fresa',
         category: 'Frutas',
         price: 0.0,
@@ -259,7 +291,7 @@ export default [
         description:''
     },
     {
-        id: 34,
+        id: 37,
         name: 'Guayaba',
         category: 'Frutas',
         price: 0.0,
@@ -267,7 +299,7 @@ export default [
         description:''
     },
     {
-        id: 35,
+        id: 38,
         name: 'Jicama',
         category: 'Frutas',
         price: 0.0,
@@ -275,7 +307,7 @@ export default [
         description:''
     },
     {
-        id: 36,
+        id: 39,
         name: 'Mango',
         category: 'Frutas',
         price: 0.0,
@@ -283,7 +315,7 @@ export default [
         description:''
     },
     {
-        id: 37,
+        id: 40,
         name: 'Manzana',
         category: 'Frutas',
         price: 0.0,
@@ -291,7 +323,7 @@ export default [
         description:''
     },
     {
-        id: 38,
+        id: 41,
         name: 'Melon',
         category: 'Frutas',
         price: 0.0,
@@ -299,7 +331,7 @@ export default [
         description:''
     },
     {
-        id: 39,
+        id: 42,
         name: 'Naranja',
         category: 'Frutas',
         price: 0.0,
@@ -307,7 +339,7 @@ export default [
         description: ''
     },
     {
-        id: 40,
+        id: 43,
         name: 'Papaya',
         category: 'Frutas',
         price: 0.0,
@@ -315,7 +347,7 @@ export default [
         description: ''
     },
     {
-        id: 41,
+        id: 44,
         name: 'Pera',
         category: 'Frutas',
         price: 0.0,
@@ -323,7 +355,7 @@ export default [
         description: ''
     },
     {
-        id: 42,
+        id: 45,
         name: 'Piña',
         category: 'Frutas',
         price: 0.0,
@@ -331,7 +363,7 @@ export default [
         description: ''
     },
     {
-        id: 43,
+        id: 46,
         name: 'Sandía',
         category: 'Frutas',
         price: 0.0,
@@ -339,7 +371,7 @@ export default [
         description: ''
     },
     {
-        id: 44,
+        id: 47,
         name: 'Uva',
         category: 'Frutas',
         price: 0.0,
@@ -348,7 +380,15 @@ export default [
     },
     //verduras
     {
-        id: 45,
+        id: 48,
+        name: 'VERDURAS',
+        category: 'Verduras',
+        price: 0.0,
+        path: 'conchitalogo.jpeg',
+        description: ''
+    },
+    {
+        id: 49,
         name: 'Aguacate',
         category: 'Verduras',
         price: 0.0,
@@ -356,7 +396,7 @@ export default [
         path: 'stockCatalogo/verduras/aguacate3.jpg'
     },
     {
-        id: 46,
+        id: 50,
         name: 'Calabaza',
         category: 'Verduras',
         price: 0.0,
@@ -364,7 +404,7 @@ export default [
         path: 'stockCatalogo/verduras/calabazalarga3.jpg'
     },
     {
-        id: 47,
+        id: 51,
         name: 'Cebolla',
         category: 'Verduras',
         price: 0.0,
@@ -372,7 +412,7 @@ export default [
         path: 'stockCatalogo/verduras/cebolla1.jpg'
     },
     {
-        id: 48,
+        id: 52,
         name: 'Chayote',
         category: 'Verduras',
         price: 0.0,
@@ -380,7 +420,7 @@ export default [
         path: 'stockCatalogo/verduras/chayote1.jpg'
     },
     {
-        id: 49,
+        id: 53,
         name: 'Jitomate',
         category: 'Verduras',
         price: 0.0,
@@ -388,7 +428,7 @@ export default [
         path: 'stockCatalogo/verduras/jitomate3.jpeg'
     },
     {
-        id: 50,
+        id: 54,
         name: 'Limon',
         category: 'Verduras',
         price: 0.0,
@@ -396,7 +436,7 @@ export default [
         path: 'stockCatalogo/verduras/limon3.jpg'
     },
     {
-        id: 51,
+        id: 55,
         name: 'Nopal',
         category: 'Verduras',
         price: 0.0,
@@ -404,7 +444,7 @@ export default [
         path: 'stockCatalogo/verduras/nopal1.jpg'
     },
     {
-        id: 52,
+        id: 56,
         name: 'Papa',
         category: 'Verduras',
         price: 0.0,
@@ -412,7 +452,7 @@ export default [
         path: 'stockCatalogo/verduras/papa1.jpg'
     },
     {
-        id: 53,
+        id: 57,
         name: 'Romana',
         category: 'Verduras',
         price: 0.0,
@@ -420,7 +460,7 @@ export default [
         path: 'stockCatalogo/verduras/romana3.jpg'
     },
     {
-        id: 54,
+        id: 58,
         name: 'Sangria',
         category: 'Verduras',
         price: 0.0,
@@ -428,7 +468,7 @@ export default [
         path: 'stockCatalogo/verduras/sangria2.jpeg'
     },
     {
-        id: 55,
+        id: 59,
         name: 'Tomate',
         category: 'Verduras',
         price: 0.0,
@@ -436,7 +476,7 @@ export default [
         path: 'stockCatalogo/verduras/tomate3.jpg'
     },
     {
-        id: 56,
+        id: 60,
         name: 'Zanahoria',
         category: 'Verduras',
         price: 0.0,
