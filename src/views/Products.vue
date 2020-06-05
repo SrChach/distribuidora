@@ -25,18 +25,34 @@
 				</div>
 			</div>
 			<div class="columns is-multiline is-mobile">
-				<div
-					class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen is-2-full-screen"
-					v-for="(product, index) in products" :key="index"
-					v-show="filtered.includes(product.id)"
-				>
-					<productCard
-						:image="product.path"
-						:product="product.name"
-						:description="product.description"
-						:category_image="found_featured_image(product.category)"
-					/>
-				</div>
+				<template v-for="(product, index) in products">
+					<div
+						class="column is-full" :key="index + '-separador'"
+						v-if="
+							(index == 0 || product.category != products[index - 1].category)
+							&& [product.category, 'Todas'].includes(selected_category)
+						"
+					>
+						<div class="container divider">
+							<figure class="image is-32x32">
+								<img class="is-rounded" src="@/assets/conchitalogo.jpeg" alt="Logo">
+							</figure>
+							{{ product.category }}
+						</div>
+					</div>
+					<div
+						class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen is-2-full-screen"
+						v-show="filtered.includes(product.id)"
+						:key="index"
+					>
+						<productCard
+							:image="product.path"
+							:product="product.name"
+							:description="product.description"
+							:category_image="found_featured_image(product.category)"
+						/>
+					</div>
+				</template>
 			</div>
 		</div>
 	</div>
@@ -53,6 +69,7 @@ import {
 	OrSpecification, AndSpecification,
 	SpecificationBuilder
 } from '@/utils/specs.js'
+import {order_products} from '@/utils/order_products.js'
 
 // Componentes
 import productCard from '@/components/Product.vue'
@@ -149,6 +166,7 @@ export default {
 		this.myFilter = new ItemFilter()
 		this.categorySpecificationBuilder = new SpecificationBuilder(CategorySpecification)
 
+		this.products = order_products(this.products, this.featured_categories)
 		this.categories = this.get_categories(this.products)
 		this.get_max_price(this.products)
 		this.filtered = this.get_satisfied()

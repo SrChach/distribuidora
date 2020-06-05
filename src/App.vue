@@ -75,4 +75,6 @@ $link-focus-border: $primary;
 html {
   scroll-behavior: smooth;
 }
+
+@import '@creativebulma/bulma-divider'
 </style>

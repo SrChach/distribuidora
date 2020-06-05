@@ -1,13 +1,5 @@
 export default [
     {
-        id:1,
-        name: 'POLLO',
-        category: 'POLLO',
-        price: 0.0,
-        path: 'conchitalogo.jpeg',
-        description: ''
-    },
-    {
         id: 2,
         name: 'Ala',
         category: 'Pollo',
@@ -103,15 +95,6 @@ export default [
         path: 'stockCatalogo/pollo/pierna y muslo .jpeg',
         description: ''
     },
-    //carnes
-    {
-        id: 14,
-        name: 'CARNES',
-        category: 'Res',
-        price: 0.0,
-        path: 'conchitalogo.jpeg',
-        description: ''
-    },
     {
         id: 15,
         name: 'Arrachera',
@@ -200,15 +183,6 @@ export default [
         description: '',
         path: 'stockCatalogo/res/tbone1.jpeg'
     },
-    //cerdo
-    {
-        id: 26,
-        name: 'CERDO',
-        category: 'Cerdo',
-        price: 0.0,
-        path: 'conchitalogo.jpeg',
-        description: ''
-    },
     {
         id: 27,
         name: 'Chicharron Prensado',
@@ -272,15 +246,6 @@ export default [
         price: 0.0,
         path: 'stockCatalogo/cerdo/tocino3.jpeg',
         description:''
-    },
-    //frutas
-    {
-        id: 35,
-        name: 'FRUTAS',
-        category: 'Frutas',
-        price: 0.0,
-        path: 'conchitalogo.jpeg',
-        description: ''
     },
     {
         id: 36,
@@ -376,15 +341,6 @@ export default [
         category: 'Frutas',
         price: 0.0,
         path: 'stockCatalogo/frutas/uva3.jpeg',
-        description: ''
-    },
-    //verduras
-    {
-        id: 48,
-        name: 'VERDURAS',
-        category: 'Verduras',
-        price: 0.0,
-        path: 'conchitalogo.jpeg',
         description: ''
     },
     {
