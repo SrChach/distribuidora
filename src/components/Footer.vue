@@ -45,6 +45,14 @@
                             Enviar
                         </button>
                     </form>
+                    <font-awesome-icon :icon="icons['faWhatsappSquare']" size="lg" :style="{color: 'green'}"/>
+                    <font-awesome-icon :icon="icons['faWhatsapp']" size="lg"/>
+                    <font-awesome-icon :icon="icons['faFacebook']" size="lg"/>
+                    <font-awesome-icon :icon="icons['faFacebookF']" size="lg"/>
+                    <font-awesome-icon :icon="icons['faFacebookMessenger']" size="lg"/>
+                    <font-awesome-icon :icon="icons['faFacebookSquare']" size="lg"/>
+                    <font-awesome-icon :icon="icons['faInstagram']" size="lg"/>
+                    <font-awesome-icon :icon="icons['faInstagramSquare']" size="lg"/>
                 </div>
 
             </div>
@@ -54,16 +62,28 @@
 
 <script>
 import mymap from '@/components/Map.vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import {
+    faWhatsappSquare, faWhatsapp, faFacebook, faFacebookF, faFacebookMessenger, faFacebookSquare, faInstagram, faInstagramSquare
+} from '@fortawesome/free-brands-svg-icons'
+
+
 export default {
     components: {
-        'my-map': mymap
+        'my-map': mymap,
+        'font-awesome-icon': FontAwesomeIcon
     },
     data(){
         return {
             nombre: '',
             correo: '',
             mensaje: '',
-            telefono: ''
+            telefono: '',
+            icons: {
+                faWhatsappSquare, faWhatsapp,
+                faFacebook, faFacebookF, faFacebookMessenger, faFacebookSquare,
+                faInstagram, faInstagramSquare
+            }
         }
     },
     methods: {
