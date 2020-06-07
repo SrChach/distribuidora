@@ -6,16 +6,20 @@
             </figure>
         </div>
         <div class="card-content">
-            <div class="media">
-                <div class="media-left" v-if="category_image != '' && typeof(category_image) === 'string'">
-                    <figure class="image is-48x48">
-                        <img :src="require(`@/assets/${category_image}`)" :alt="category + ' image'">
-                    </figure>
+            <section :class="`hero is-${category_image} is-small is-rounded`">
+                <div class="hero-body">
+                    <div class="media">
+                        <!-- <div class="media-left" v-if="category_image != '' && typeof(category_image) === 'string'">
+                            <figure class="image is-48x48">
+                                <img :src="require(`@/assets/${category_image}`)" :alt="category + ' image'">
+                            </figure>
+                        </div> -->
+                        <div class="media-content">
+                            <p class="title is-5 has-text-centered">{{ product }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="media-content">
-                    <p class="title is-4">{{ product }}</p>
-                </div>
-            </div>
+            </section>
 
             <div class="content">
                 {{ description }}

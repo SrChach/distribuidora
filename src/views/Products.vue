@@ -92,7 +92,23 @@ export default {
 			featured_categories: [
 				{
 					category: 'Pollo',
-					image: 'featured_categories/Pollo.png'
+					color: 'warning'
+				},
+				{
+					category: 'Cerdo',
+					color: 'danger'
+				},
+				{
+					category: 'Frutas',
+					color: 'success'
+				},
+				{
+					category: 'Verduras',
+					color: 'primary'
+				},
+				{
+					category: 'Res',
+					color: 'danger'
 				}
 			]
 		}
@@ -110,7 +126,7 @@ export default {
 			let founded = this.featured_categories.find(o => o.category == category)
 			if (typeof(founded) == 'undefined')
 				return ''
-			return founded.image
+			return founded.color
 		},
 		get_max_price: function (products) {
 			let array_of_prices = products.map(product => product.price)

@@ -1,13 +1,37 @@
 <template>
     <footer class="footer" id="footer">
         <div class="container">
+            <div class="columns is-mobile is-centered">
+                <div class="column column is-3">
+                    <center>
+                        <h2>Siguenos en nuestras redes sociales</h2>
+                        <div>
+                            <a class="bigFuntion" href="https://api.WhatsApp.com/send?phone=+5215519606577" target="_blank" 
+                            style="border:0px solid black; background-color: transparent;">
+                                <font-awesome-icon :icon="icons['faWhatsappSquare']" size="3x" :style="{color: 'green'}"/>
+                            </a>
+                            <a class="bigFuntion" href="https://www.facebook.com/Distribuidora-Conchita-136746656733647/" target="_blank" 
+                            style="border:0px solid black; background-color: transparent;"  :style="{color: 'blue'}">
+                                <font-awesome-icon :icon="icons['faFacebook']" size="3x"/>
+                            </a>
+                            <a class="bigFuntion" href="https://api.WhatsApp.com/send?phone=+525529424988" target="_blank" 
+                            style="border:0px solid black; background-color: transparent;">
+                                <font-awesome-icon :icon="icons['faInstagramSquare']" size="3x" :style="{color: 'red'}"/>
+                            </a>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
             <div class="columns">
                 <div class="column is-6">
                     <h2><b>Visítanos en:</b></h2>
                     <span>
                         Mercado Jamaica Zona, local 276, Jamaica, Venustiano Carranza, 15800 Ciudad de México
                     </span>
-                    <my-map :coordinates="[19.4066215, -99.1241711]"/>
+                    <my-map :coordinates="[19.408495, -99.122652]"/>
                 </div>
 
                 <div class="column is-6">
@@ -45,14 +69,7 @@
                             Enviar
                         </button>
                     </form>
-                    <font-awesome-icon :icon="icons['faWhatsappSquare']" size="lg" :style="{color: 'green'}"/>
-                    <font-awesome-icon :icon="icons['faWhatsapp']" size="lg"/>
-                    <font-awesome-icon :icon="icons['faFacebook']" size="lg"/>
-                    <font-awesome-icon :icon="icons['faFacebookF']" size="lg"/>
-                    <font-awesome-icon :icon="icons['faFacebookMessenger']" size="lg"/>
-                    <font-awesome-icon :icon="icons['faFacebookSquare']" size="lg"/>
-                    <font-awesome-icon :icon="icons['faInstagram']" size="lg"/>
-                    <font-awesome-icon :icon="icons['faInstagramSquare']" size="lg"/>
+                    
                 </div>
 
             </div>
@@ -119,3 +136,17 @@ export default {
     }
 }
 </script>
+<style scoped>
+.bigFuntion{
+    color: white;
+    text-decoration: none;
+    padding: .7rem;
+    display: inline-block;
+}
+
+.fa-3x:hover{
+    transition: all .5s;
+    font-size: 4rem;
+    align-content: center;
+}
+</style>
