@@ -17,11 +17,11 @@ export default [
     },
     {
         id: 4,
-        name: 'Alitas Naturales',
+        name: 'Pavo Natural',
         category: 'Pollo',
         price: 0.0,
         description: '',
-        path:'stockCatalogo/pollo/alitasnaturales2.jpg'
+        path:'stockCatalogo/pollo/pavoparsons.png'
     },
     {
         id: 5,
