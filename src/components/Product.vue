@@ -14,7 +14,6 @@
                 </div>
                 <div class="media-content">
                     <p class="title is-4">{{ product }}</p>
-                    <p class="subtitle is-6">${{ price }}</p>
                 </div>
             </div>
 
@@ -42,7 +41,7 @@ export default {
         },
         price: {
             type: Number,
-            default: 11.10
+            default: 1
         },
         category: {
             type: String,
