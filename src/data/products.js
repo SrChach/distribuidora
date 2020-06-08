@@ -438,5 +438,38 @@ export default [
         price: 0.0,
         description: '',
         path: 'stockCatalogo/verduras/zanahoria2.jpg'
+    },
+    {
+        id: 61,
+        name: 'Mojarra',
+        category: 'Pescados',
+        price: 0.0,
+        description: '',
+        path: 'stockCatalogo/pescado/Mojarra.jpg'
+    },
+    {
+        id: 62,
+        name: 'Salmon',
+        category: 'Pescados',
+        price: 0.0,
+        description: '',
+        path: 'stockCatalogo/pescado/Salmon.jpg'
+    },
+    {
+        id: 63,
+        name: 'Camaron coctelero',
+        category: 'Pescados',
+        price: 0.0,
+        description: '',
+        path: 'stockCatalogo/pescado/camaron-coctelero.jpeg'
+    },
+    {
+        id: 64,
+        name: 'Camaron',
+        category: 'Pescados',
+        price: 0.0,
+        description: '',
+        path: 'stockCatalogo/pescado/camaron-crudo.jpg'
     }
+
 ]

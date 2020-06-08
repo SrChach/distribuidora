@@ -49,7 +49,7 @@
 							:image="product.path"
 							:product="product.name"
 							:description="product.description"
-							:category_image="found_featured_image(product.category)"
+							:category="found_featured_image(product.category)"
 						/>
 					</div>
 				</template>
@@ -92,23 +92,28 @@ export default {
 			featured_categories: [
 				{
 					category: 'Pollo',
-					color: 'warning'
+					color: 'pollo'
 				},
 				{
 					category: 'Cerdo',
-					color: 'danger'
+					color: 'cerdo'
 				},
 				{
 					category: 'Frutas',
-					color: 'success'
+					color: 'fruta'
 				},
 				{
 					category: 'Verduras',
-					color: 'primary'
+					color: 'verdura'
 				},
 				{
 					category: 'Res',
-					color: 'danger'
+					color: 'res'
+				},
+				{
+					category: 'Pescados',
+					color: 'pescado'
+
 				}
 			]
 		}
