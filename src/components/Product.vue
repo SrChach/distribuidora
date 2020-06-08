@@ -58,10 +58,7 @@ export default {
 </script>
 <style>
 
-
     .card:hover{
-
-
         box-shadow:
                 0 0 0.1vw  0.4vw #fff7f7,
                 0 0 0.4vw  0.6vw #e97272,
@@ -69,27 +66,10 @@ export default {
                 inset 0 0 1.5vw  0.4vw #e50b0b,
                 inset 0 0 0.4vw  0.2vw #e97272,
                 inset 0 0 0.5vw  0.2vw #fff7f7;
-
-
-    }
-    .card .media-content{
-        box-shadow:
-
-                0 0 0.1vw  0.4vw #ffffff,
-                0 0 0.4vw  0.6vw #ffffff,
-                0 0   4vw  0.4vw #ffffff,
-                inset 0 0 1.5vw  0.4vw #ffffff,
-                inset 0 0 0.4vw  0.2vw #ffffff,
-                inset 0 0 0.5vw  0.2vw #ffffff;
-
-
-
-
-
-
     }
 
-
-
+    .card-content{
+        background-color: white;
+    }
 
 </style>
