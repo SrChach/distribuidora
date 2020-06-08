@@ -49,7 +49,7 @@
 							:image="product.path"
 							:product="product.name"
 							:description="product.description"
-							:category="found_featured_image(product.category)"
+							:custom_class="found_featured_class(product.category)"
 						/>
 					</div>
 				</template>
@@ -92,28 +92,27 @@ export default {
 			featured_categories: [
 				{
 					category: 'Pollo',
-					color: 'pollo'
+					custom_class: 'resaltado-pollo'
 				},
 				{
 					category: 'Cerdo',
-					color: 'cerdo'
+					custom_class: 'resaltado-cerdo'
 				},
 				{
 					category: 'Frutas',
-					color: 'fruta'
+					custom_class: 'resaltado-fruta'
 				},
 				{
 					category: 'Verduras',
-					color: 'verdura'
+					custom_class: 'resaltado-verdura'
 				},
 				{
 					category: 'Res',
-					color: 'res'
+					custom_class: 'resaltado-res'
 				},
 				{
 					category: 'Pescados',
-					color: 'pescado'
-
+					custom_class: 'resaltado-pescado'
 				}
 			]
 		}
@@ -127,11 +126,11 @@ export default {
 					return { selected: true, name: category_name } // Convierte a objetos
 				})
 		},
-		found_featured_image: function (category) {
+		found_featured_class: function (category) {
 			let founded = this.featured_categories.find(o => o.category == category)
 			if (typeof(founded) == 'undefined')
 				return ''
-			return founded.color
+			return founded.custom_class
 		},
 		get_max_price: function (products) {
 			let array_of_prices = products.map(product => product.price)
