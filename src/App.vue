@@ -30,14 +30,14 @@ export default {
 @import "~bulma/sass/utilities/_all";
 
 // Set your colors
-$primary: #832019;
+$primary: #209CEF;
 $primary-invert: findColorInvert($primary);
 $warning: #E3BE2C;
 $warning-invert: findColorInvert($warning);
 $success: #50871F;
 $success-invert: findColorInvert($success);
-$twitter: #4099FF;
-$twitter-invert: findColorInvert($twitter);
+$info: #4099FF;
+$info-invert: findColorInvert($info);
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (
@@ -49,8 +49,7 @@ $colors: (
     "info": ($info, $info-invert),
     "success": ($success, $success-invert),
     "warning": ($warning, $warning-invert),
-    "danger": ($danger, $danger-invert),
-    "twitter": ($twitter, $twitter-invert)
+    "danger": ($danger, $danger-invert)
 );
 $footer-color: true;
 $footer-background-color: $light;

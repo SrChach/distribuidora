@@ -18,10 +18,10 @@ export default {
         return {
             carousels: [
                 { text: 'Pollo', rutaImage: require('../assets/carrusel/img_uno.jpg') },
+                { text: 'Alternativo', rutaImage: require('../assets/carrusel/carne_pimientos.jpeg') },
                 { text: 'Huevos', rutaImage: require('../assets/carrusel/img_dos.jpeg') },
                 { text: 'Carne', rutaImage: require('../assets/carrusel/img_tres.jpeg') },
-                { text: 'Pescado', rutaImage: require('../assets/carrusel/img_cuatro.jpeg') },
-                { text: 'Pescado', rutaImage: require('../assets/carrusel/img_cinco.jpeg') }
+                { text: 'Pescado', rutaImage: require('../assets/carrusel/img_cuatro.jpeg') }
             ]
         }
     }

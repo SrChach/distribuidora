@@ -2,20 +2,17 @@
     <footer class="footer" id="footer">
         <div class="container">
             <div class="columns is-mobile is-centered">
-                <div class="column column is-3">
+                <div class="column is-12" style="height: 120px">
                     <center>
                         <h2>Siguenos en nuestras redes sociales</h2>
                         <div>
-                            <a class="bigFuntion" href="https://api.WhatsApp.com/send?phone=+5215519606577" target="_blank" 
-                            style="border:0px solid black; background-color: transparent;">
+                            <a class="bigFuntion" href="https://api.WhatsApp.com/send?phone=+5215519606577" target="_blank">
                                 <font-awesome-icon :icon="icons['faWhatsappSquare']" size="3x" :style="{color: 'green'}"/>
                             </a>
-                            <a class="bigFuntion" href="https://www.facebook.com/Distribuidora-Conchita-136746656733647/" target="_blank" 
-                            style="border:0px solid black; background-color: transparent;"  :style="{color: 'blue'}">
+                            <a class="bigFuntion" href="https://www.facebook.com/Distribuidora-Conchita-136746656733647/" target="_blank" :style="{color: 'blue'}">
                                 <font-awesome-icon :icon="icons['faFacebookSquare']" size="3x"/>
                             </a>
-                            <a class="bigFuntion" href="https://api.WhatsApp.com/send?phone=+525529424988" target="_blank" 
-                            style="border:0px solid black; background-color: transparent;">
+                            <a class="bigFuntion" href="https://api.WhatsApp.com/send?phone=+525529424988" target="_blank">
                                 <font-awesome-icon :icon="icons['faInstagramSquare']" size="3x" :style="{color:'deeppink'}"/>
                             </a>
                         </div>
@@ -66,12 +63,10 @@
                         <br>
 
                         <button type="submit" class="button is-warning is-fullwidth">
-                            Enviar
+                            <b>Enviar</b>
                         </button>
                     </form>
-                    
                 </div>
-
             </div>
         </div>
     </footer>
@@ -139,14 +134,12 @@ export default {
 <style scoped>
 .bigFuntion{
     color: white;
-    text-decoration: none;
     padding: .7rem;
     display: inline-block;
 }
 
 .fa-3x:hover{
     transition: all .5s;
-    font-size: 4rem;
-    align-content: center;
+    transform: scale(1.3);
 }
 </style>
