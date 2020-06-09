@@ -1,30 +1,23 @@
 <template>
 	<div class="section">
 		<div class="container is-fluid">
-			<div class="columns">
-				<div class="column">
-					<b-field :label="'Precio máximo seleccionado: ' + selected_price">
-						<b-slider
-							v-model="selected_price"
-							:min="min_price" :max="max_price"
-							:step="0.5"
-							lazy
-							@change="filtered = get_satisfied()"
-						/>
-					</b-field>
-				</div>
-				<div class="column">
-					<b-field :label="'Categorías: ' + selected_category">
-						<b-select placeholder="Todas" v-model="selected_category" expanded>
-							<option value="Todas" selected>Todas</option>
-							<option v-for="(category, index) in categories" :key="index" :value="category.name">
-								{{ category.name }}
-							</option>
-						</b-select>
-					</b-field>
-				</div>
-			</div>
 			<div class="columns is-multiline is-mobile">
+				<div class="column is-12">
+					<div class="tabs is-centered is-toggle">
+						<ul>
+							<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : ''">
+								<a>Todas</a>
+							</li>
+							<li 
+								v-for="(category, index) in categories" :key="index" 
+								:class="(selected_category == category.name) ? 'is-active' : ''"
+								@click="selected_category = category.name"
+							>
+								<a>{{category.name}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 				<template v-for="(product, index) in products">
 					<div
 						class="column is-full" :key="index + '-separador'"
@@ -33,7 +26,7 @@
 							&& [product.category, 'Todas'].includes(selected_category)
 						"
 					>
-						<div class="container divider">
+						<div class="divider">
 							<figure class="image is-32x32">
 								<img class="is-rounded" src="@/assets/conchitalogo.jpeg" alt="Logo">
 							</figure>

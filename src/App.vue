@@ -64,6 +64,11 @@ $link-focus-border: $primary;
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
+@include mobile {
+  .tabs ul {width:100%;flex-direction:row;flex-wrap:wrap;}
+  .tabs li {width:50%}
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
