@@ -57,11 +57,7 @@ import productsData from '@/data/products.js'
 
 // Funcionalidad
 import {ItemFilter} from '@/utils/filter.js'
-import {
-	CategorySpecification, PriceSpecification,
-	OrSpecification, AndSpecification,
-	SpecificationBuilder
-} from '@/utils/specs.js'
+import { CategorySpecification, OrSpecification, SpecificationBuilder } from '@/utils/specs.js'
 import {order_products} from '@/utils/order_products.js'
 
 // Componentes
@@ -79,9 +75,6 @@ export default {
 			filtered: [],
 			categories: [],
 			selected_category: 'Todas',
-			selected_price: 500,
-			max_price: 0,
-			min_price: 0,
 			featured_categories: [
 				{
 					category: 'Pollo',
@@ -125,23 +118,6 @@ export default {
 				return ''
 			return founded.custom_class
 		},
-		get_max_price: function (products) {
-			let array_of_prices = products.map(product => product.price)
-
-			this.max_price = array_of_prices
-				.reduce((accumulator, currentValue) => {
-					if(currentValue > accumulator)
-						return currentValue
-					return accumulator
-				})
-
-			this.min_price = array_of_prices
-				.reduce((accumulator, currentValue) => {
-					if(currentValue < accumulator)
-						return currentValue
-					return accumulator
-				})
-		},
 		get_satisfied: function () {
 			// Solo las categorías que están seleccionadas
 			let selected_categories = this.categories
@@ -154,14 +130,8 @@ export default {
 				...array_category_specs
 			)
 
-			let priceSpecification = new PriceSpecification(0, this.selected_price)
-
-			let priceAndCategoriesSpecification = new AndSpecification(
-				priceSpecification, allCategoriesSpecification
-			)
-
 			// Obteniendo solo los productos que cumplen las especificaciones
-			let productsThatAccomplish = this.myFilter.filter(this.products, priceAndCategoriesSpecification)
+			let productsThatAccomplish = this.myFilter.filter(this.products, allCategoriesSpecification)
 
 			// Obteniendo un array solo con los id's de los productos que cumplieron
 			return productsThatAccomplish.map(product => product.id)
@@ -181,7 +151,6 @@ export default {
 
 		this.products = order_products(this.products, this.featured_categories)
 		this.categories = this.get_categories(this.products)
-		this.get_max_price(this.products)
 		this.filtered = this.get_satisfied()
 	},
 	watch: {

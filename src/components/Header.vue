@@ -60,18 +60,6 @@ export default {
 </script>
 
 <style>
-/* .navbar-start a {
-    top: 25%;
-    height: 50%;
-    border-right: 2px solid white;
-}
-
-.navbar-end a {
-    top: 25%;
-    height: 50%;
-    border-left: 2px solid white;
-} */
-
 .navbar-burger {
     margin-left: auto;
     margin-right: auto;

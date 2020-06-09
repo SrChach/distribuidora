@@ -1,47 +1,56 @@
-.resaltado-res:hover {
-    transition: .3s;
-    box-shadow:
-        0 0 0.1vw  0.4vw #fff7f7,
-        0 0 0.4vw  0.6vw #e97272,
-        0 0   4vw  0.4vw #e50b0b;
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+$primary: #209CEF;
+$primary-invert: findColorInvert($primary);
+$warning: #E3BE2C;
+$warning-invert: findColorInvert($warning);
+$success: #50871F;
+$success-invert: findColorInvert($success);
+$info: #4099FF;
+$info-invert: findColorInvert($info);
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert)
+);
+
+// Defining our link's colors
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Defining footer configuration
+$footer-color: true;
+$footer-background-color: $light;
+
+// Import Bulma and Buefy styles and plugins
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+@import '@creativebulma/bulma-divider';
+
+// Defining tabs styles for mobile
+@include mobile {
+  .tabs ul {width:100%;flex-direction:row;flex-wrap:wrap;}
+  .tabs li {width:50%}
 }
 
-.resaltado-pollo:hover{
-    transition: .3s;
-    box-shadow:
-        0 0 0.1vw  0.4vw #fff7f7,
-        0 0 0.4vw  0.6vw #ecf535,
-        0 0   4vw  0.4vw #e1CC2C;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
 }
 
-.resaltado-fruta:hover{
-    transition: .3s;
-    box-shadow:
-        0 0 0.1vw  0.4vw #F0FFF0,
-        0 0 0.4vw  0.6vw #66FF66,
-        0 0   4vw  0.4vw #008B00;
-}
-
-.resaltado-pescado:hover{
-    transition: .3s;
-    box-shadow:
-        0 0 0.1vw  0.4vw #86EBFF,
-        0 0 0.4vw  0.6vw #296d92,
-        0 0   4vw  0.4vw #061487;
-}
-
-.resaltado-verdura:hover{
-    transition: .3s;
-    box-shadow:
-        0 0 0.1vw  0.4vw #8ee61a,
-        0 0 0.4vw  0.6vw #449c08,
-        0 0   4vw  0.4vw #005e08;
-}
-
-.resaltado-cerdo:hover{
-    transition: .3s;
-    box-shadow:
-        0 0 0.1vw  0.4vw #f1b6ae,
-        0 0 0.4vw  0.6vw #d66b5b,
-        0 0   4vw  0.4vw #862023;
+html {
+  scroll-behavior: smooth;
 }

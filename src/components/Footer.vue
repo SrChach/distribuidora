@@ -75,10 +75,7 @@
 <script>
 import mymap from '@/components/Map.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import {
-    faWhatsappSquare, faWhatsapp, faFacebook, faFacebookF, faFacebookMessenger, faFacebookSquare, faInstagram, faInstagramSquare
-} from '@fortawesome/free-brands-svg-icons'
-
+import { faWhatsappSquare, faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons'
 
 export default {
     components: {
@@ -91,11 +88,7 @@ export default {
             correo: '',
             mensaje: '',
             telefono: '',
-            icons: {
-                faWhatsappSquare, faWhatsapp,
-                faFacebook, faFacebookF, faFacebookMessenger, faFacebookSquare,
-                faInstagram, faInstagramSquare
-            }
+            icons: { faWhatsappSquare, faFacebookSquare, faInstagramSquare }
         }
     },
     methods: {
@@ -131,6 +124,7 @@ export default {
     }
 }
 </script>
+
 <style scoped>
 .bigFuntion{
     color: white;
