@@ -16,7 +16,7 @@
                 {{ description }}
             </div>
         </div>
-    </div> <!--div chido -->
+    </div>
 </div>
 </template>
 
