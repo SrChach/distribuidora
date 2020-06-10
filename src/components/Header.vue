@@ -40,20 +40,24 @@
                     <b>Contáctanos</b>&nbsp;&nbsp;
                 </b-navbar-item>
             </template>
-        </b-navbar> -->
+        </b-navbar>
         <figure class="image container has-text-centered">
-            <img
-                class="is-rounded responsive"
-                src="@/assets/LogoHeader.jpeg"
-                alt="Logo de Distribuidora Conchita"
-            >
-        </figure>
+                <i>
+
+                    <img
+                            class="is-rounded responsive"
+                            src="@/assets/LogoHeader.jpeg"
+                            alt="Logo de Distribuidora Conchita"
+                    >
+
+                </i>
+            </figure>-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <nav class="menu" id="myTopnav">
-            <a href="#" class="active" title="Home"><i></i> Productos </a>
-            <a href="#" title="About"><i class="far fa-address-card"></i> Nosotro </a>
-            <a href="#" title="Contact"><i class="fas fa-mobile-alt"></i> Contactanos </a>
+        <nav class="menu" >
+            <a href="#" class="active" title="Home" ><i class="far fade-enter-active"></i> Productos </a>
+            <a href="about" title="About"><i class="far fa-address-card"></i> Mas Informacion </a>
+            <a href="#footer" title="Contact"><i class="fas fa-mobile-alt"></i> Contactanos </a>
             <a href="javascript:void(0);" class="icon" @submit.prevent="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -173,7 +177,8 @@ body{
 .menu{
     text-align: center;
     line-height: 3.5;
-    border-bottom: 4px solid #E91E63;
+    border-bottom: 4px solid #1010d1;
+
 }
  
     .menu a{
@@ -183,7 +188,7 @@ body{
         font-size: 18px;
         text-decoration: none;
         color: #282929;
-        border-bottom: 3px solid #e91e63;
+        border-bottom: 3px solid #1010d1;
          
         -webkit-animation: down-underline .4s;
         -moz-animation: down-underline .4s;
@@ -197,7 +202,7 @@ body{
     }
  
     .menu a:hover{
-        color:#e91e63;
+        color: #00007c;
         padding: 6px 0px;
              
         -webkit-animation: up-underline .4s;
