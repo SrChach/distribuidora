@@ -1,24 +1,20 @@
 <template>
     <div class="card">
-        <div class="card-image">
-            <figure class="image is-4by3">
-                <img :src="require(`@/assets/${image}`)" alt="Placeholder image">
-            </figure>
-        </div>
-        <div class="card-content">
-            <div class="media">
-                <div class="media-left" v-if="category_image != '' && typeof(category_image) === 'string'">
-                    <figure class="image is-48x48">
-                        <img :src="require(`@/assets/${category_image}`)" :alt="category + ' image'">
-                    </figure>
-                </div>
-                <div class="media-content">
-                    <p class="title is-4">{{ product }}</p>
-                </div>
+        <div :class="custom_class">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img :src="require(`@/assets/${image}`)" alt="Placeholder image">
+                </figure>
             </div>
-
-            <div class="content">
-                {{ description }}
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-5 has-text-centered">{{ product }}</p>
+                    </div>
+                </div>
+                <div class="content">
+                    {{ description }}
+                </div>
             </div>
         </div>
     </div>
@@ -47,10 +43,14 @@ export default {
             type: String,
             default: 'Pollo'
         },
-        category_image: {
+        custom_class: {
             type: String,
             default: null
         }
     }
 }
 </script>
+
+<style lang="scss">
+    @import '@/styles/components/_product.scss';
+</style>

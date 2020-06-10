@@ -1,13 +1,34 @@
 <template>
     <footer class="footer" id="footer">
         <div class="container">
+            <div class="columns is-mobile is-centered">
+                <div class="column is-12" style="height: 120px">
+                    <center>
+                        <h2>Siguenos en nuestras redes sociales</h2>
+                        <div>
+                            <a class="bigFuntion" href="https://api.WhatsApp.com/send?phone=+5215519606577" target="_blank">
+                                <font-awesome-icon :icon="icons['faWhatsappSquare']" size="3x" :style="{color: 'green'}"/>
+                            </a>
+                            <a class="bigFuntion" href="https://www.facebook.com/Distribuidora-Conchita-136746656733647/" target="_blank" :style="{color: 'blue'}">
+                                <font-awesome-icon :icon="icons['faFacebookSquare']" size="3x"/>
+                            </a>
+                            <a class="bigFuntion" href="https://api.WhatsApp.com/send?phone=+525529424988" target="_blank">
+                                <font-awesome-icon :icon="icons['faInstagramSquare']" size="3x" :style="{color:'deeppink'}"/>
+                            </a>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
             <div class="columns">
                 <div class="column is-6">
                     <h2><b>Visítanos en:</b></h2>
                     <span>
                         Mercado Jamaica Zona, local 276, Jamaica, Venustiano Carranza, 15800 Ciudad de México
                     </span>
-                    <my-map :coordinates="[19.4066215, -99.1241711]"/>
+                    <my-map :coordinates="[19.408495, -99.122652]"/>
                 </div>
 
                 <div class="column is-6">
@@ -42,11 +63,10 @@
                         <br>
 
                         <button type="submit" class="button is-warning is-fullwidth">
-                            Enviar
+                            <b>Enviar</b>
                         </button>
                     </form>
                 </div>
-
             </div>
         </div>
     </footer>
@@ -54,16 +74,21 @@
 
 <script>
 import mymap from '@/components/Map.vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faWhatsappSquare, faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons'
+
 export default {
     components: {
-        'my-map': mymap
+        'my-map': mymap,
+        'font-awesome-icon': FontAwesomeIcon
     },
     data(){
         return {
             nombre: '',
             correo: '',
             mensaje: '',
-            telefono: ''
+            telefono: '',
+            icons: { faWhatsappSquare, faFacebookSquare, faInstagramSquare }
         }
     },
     methods: {
@@ -99,3 +124,16 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.bigFuntion{
+    color: white;
+    padding: .7rem;
+    display: inline-block;
+}
+
+.fa-3x:hover{
+    transition: all .5s;
+    transform: scale(1.3);
+}
+</style>

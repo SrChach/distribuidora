@@ -11,16 +11,15 @@
         </b-carousel>
     </div>
 </template>
-
 <script>
 export default {
     data(){
         return {
             carousels: [
                 { text: 'Pollo', rutaImage: require('../assets/carrusel/img_uno.jpg') },
-                { text: 'Huevos', rutaImage: require('../assets/carrusel/img_dos.jpeg') },
-                { text: 'Carne', rutaImage: require('../assets/carrusel/img_tres.jpeg') },
-                { text: 'Pescado', rutaImage: require('../assets/carrusel/img_cuatro.jpeg') },
+                { text: 'Huevos', rutaImage: require('../assets/carrusel/carne_pimientos.jpeg') },
+                { text: 'Carne', rutaImage: require('../assets/carrusel/img_tres.jpg') },
+                { text: 'Pescado', rutaImage: require('../assets/carrusel/img_cuatro.jpg') },
                 { text: 'Pescado', rutaImage: require('../assets/carrusel/img_cinco.jpeg') }
             ]
         }

@@ -1,30 +1,38 @@
 <template>
 	<div class="section">
 		<div class="container is-fluid">
-			<div class="columns">
-				<div class="column">
-					<b-field :label="'Precio máximo seleccionado: ' + selected_price">
-						<b-slider
-							v-model="selected_price"
-							:min="min_price" :max="max_price"
-							:step="0.5"
-							lazy
-							@change="filtered = get_satisfied()"
-						/>
-					</b-field>
-				</div>
-				<div class="column">
-					<b-field :label="'Categorías: ' + selected_category">
-						<b-select placeholder="Todas" v-model="selected_category" expanded>
-							<option value="Todas" selected>Todas</option>
-							<option v-for="(category, index) in categories" :key="index" :value="category.name">
-								{{ category.name }}
-							</option>
-						</b-select>
-					</b-field>
-				</div>
-			</div>
 			<div class="columns is-multiline is-mobile">
+				<div class="column is-12">
+					<div class="tabs is-centered is-toggle">
+						<ul>
+							<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
+								<a>Todas</a>
+							</li>
+							<li 
+								v-for="(category, index) in featured_categories" :key="index" 
+								:class= "(selected_category == category.category) ? 'is-active' : ''"
+								@click="selected_category = category.category"
+							> 
+							<!-- <div>
+							"(selected_category == category.category) ? 'is-active' : ''"
+							</div> -->
+
+								<div class="columns is-multiline is-mobile is-centered ">
+									<div class="column is-12">
+										<a :style="`background-color:${category.color}`">{{category.category}}</a>
+									<center>
+										<div class="column is-12">
+											<figure class="image is-64x64">
+												<img :src="category.ima">
+											</figure>
+										</div>
+									</center>																
+									</div>	
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
 				<template v-for="(product, index) in products">
 					<div
 						class="column is-full" :key="index + '-separador'"
@@ -33,7 +41,7 @@
 							&& [product.category, 'Todas'].includes(selected_category)
 						"
 					>
-						<div class="container divider">
+						<div class="divider">
 							<figure class="image is-32x32">
 								<img class="is-rounded" src="@/assets/conchitalogo.jpeg" alt="Logo">
 							</figure>
@@ -49,7 +57,7 @@
 							:image="product.path"
 							:product="product.name"
 							:description="product.description"
-							:category_image="found_featured_image(product.category)"
+							:custom_class="found_featured_class(product.category)"
 						/>
 					</div>
 				</template>
@@ -64,11 +72,7 @@ import productsData from '@/data/products.js'
 
 // Funcionalidad
 import {ItemFilter} from '@/utils/filter.js'
-import {
-	CategorySpecification, PriceSpecification,
-	OrSpecification, AndSpecification,
-	SpecificationBuilder
-} from '@/utils/specs.js'
+import { CategorySpecification, OrSpecification, SpecificationBuilder } from '@/utils/specs.js'
 import {order_products} from '@/utils/order_products.js'
 
 // Componentes
@@ -86,13 +90,42 @@ export default {
 			filtered: [],
 			categories: [],
 			selected_category: 'Todas',
-			selected_price: 500,
-			max_price: 0,
-			min_price: 0,
 			featured_categories: [
 				{
 					category: 'Pollo',
-					image: 'featured_categories/Pollo.png'
+					custom_class: 'resaltado-pollo',
+					ima: require('../assets/stockCatalogo/pollo/pollo entero.jpeg'),
+					color: 'yellow'
+				},
+				{
+					category: 'Cerdo',
+					custom_class: 'resaltado-cerdo',
+					ima: require('../assets/stockCatalogo/cerdo/pierna3.jpeg'),
+					color: 'pink'
+				},
+				{
+					category: 'Frutas',
+					custom_class: 'resaltado-fruta',
+					ima: require('../assets/stockCatalogo/frutas/frutas.png'),
+					color: 'green'
+				},
+				{
+					category: 'Verduras',
+					custom_class: 'resaltado-verdura',
+					ima: require('../assets/stockCatalogo/verduras/verduras.jpeg'),
+					color: 'gray'
+				},
+				{
+					category: 'Res',
+					custom_class: 'resaltado-res',
+					ima: require('../assets/stockCatalogo/res/res.jpeg'),
+					color: 'red'
+				},
+				{
+					category: 'Pescados',
+					custom_class: 'resaltado-pescado',
+					ima: require('../assets/stockCatalogo/pescado/pescados.jpg'),
+					color: 'blue'
 				}
 			]
 		}
@@ -106,28 +139,11 @@ export default {
 					return { selected: true, name: category_name } // Convierte a objetos
 				})
 		},
-		found_featured_image: function (category) {
+		found_featured_class: function (category) {
 			let founded = this.featured_categories.find(o => o.category == category)
 			if (typeof(founded) == 'undefined')
 				return ''
-			return founded.image
-		},
-		get_max_price: function (products) {
-			let array_of_prices = products.map(product => product.price)
-
-			this.max_price = array_of_prices
-				.reduce((accumulator, currentValue) => {
-					if(currentValue > accumulator)
-						return currentValue
-					return accumulator
-				})
-
-			this.min_price = array_of_prices
-				.reduce((accumulator, currentValue) => {
-					if(currentValue < accumulator)
-						return currentValue
-					return accumulator
-				})
+			return founded.custom_class
 		},
 		get_satisfied: function () {
 			// Solo las categorías que están seleccionadas
@@ -141,14 +157,8 @@ export default {
 				...array_category_specs
 			)
 
-			let priceSpecification = new PriceSpecification(0, this.selected_price)
-
-			let priceAndCategoriesSpecification = new AndSpecification(
-				priceSpecification, allCategoriesSpecification
-			)
-
 			// Obteniendo solo los productos que cumplen las especificaciones
-			let productsThatAccomplish = this.myFilter.filter(this.products, priceAndCategoriesSpecification)
+			let productsThatAccomplish = this.myFilter.filter(this.products, allCategoriesSpecification)
 
 			// Obteniendo un array solo con los id's de los productos que cumplieron
 			return productsThatAccomplish.map(product => product.id)
@@ -168,7 +178,6 @@ export default {
 
 		this.products = order_products(this.products, this.featured_categories)
 		this.categories = this.get_categories(this.products)
-		this.get_max_price(this.products)
 		this.filtered = this.get_satisfied()
 	},
 	watch: {
@@ -184,3 +193,16 @@ export default {
 	}
 }
 </script>
+<style scoped>
+.a {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+.active, .a:hover {
+  background-color: #666;
+  color: white;
+}
+</style>
