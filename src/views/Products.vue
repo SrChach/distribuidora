@@ -10,7 +10,7 @@
 								<center>
 									<div class="column is-12">
 										<figure class="image is-64x64">
-											<img src="@/assets/conchitalogo.jpeg">
+											<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
 										</figure>
 									</div>
 								</center>
@@ -29,8 +29,8 @@
 										</a>
 										<center>
 											<div class="column is-12">
-												<figure class="image is-64x64">
-													<img :src="category.ima">
+												<figure class="image is-64x64 is-hidden-mobile">
+													<img v-show="(selected_category == category.category)" :src="category.ima">
 												</figure>
 											</div>
 										</center>

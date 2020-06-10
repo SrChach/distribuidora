@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container is-fluid">
+        <div class="container is-fluid is-hidden-desktop">
             <div class="columns is-multiline">
                 <div class="column is-12" style="padding-bottom: 0">
                     <figure class="image container has-text-centered">
@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <br>
+        <br class="is-hidden-desktop">
         <b-navbar close-on-click :fixed-top="!is_top" type="is-info" id="nav">
             <template slot="start" :transparent="true">
                 <b-navbar-item tag="router-link" :to="{ path: '/' }"

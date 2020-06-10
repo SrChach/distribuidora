@@ -457,7 +457,7 @@ export default [
     },
     {
         id: 63,
-        name: 'Camaron coctelero',
+        name: 'Camaron pacotilla',
         category: 'Pescados',
         price: 0.0,
         description: '',
