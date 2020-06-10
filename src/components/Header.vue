@@ -3,19 +3,17 @@
         <div class="container is-fluid">
             <div class="columns is-multiline">
                 <div class="column is-12" style="padding-bottom: 0">
-                    <figure class="image container is-96x96">
+                    <figure class="image container has-text-centered">
                         <img
-                            class="is-rounded"
-                            src="@/assets/conchitalogo.jpeg"
+                            class="is-rounded responsive"
+                            src="@/assets/LogoHeader.jpeg"
                             alt="Logo de Distribuidora Conchita"
                         >
                     </figure>
                 </div>
-                <div class="column is-12 has-text-centered" style="padding-top: 0">
-                    <b>Distribuidora Conchita</b>
-                </div>
             </div>
         </div>
+        <br>
         <b-navbar close-on-click :fixed-top="!is_top" type="is-info" id="nav">
             <template slot="start" :transparent="true">
                 <b-navbar-item tag="router-link" :to="{ path: '/' }"
@@ -63,5 +61,11 @@ export default {
 .navbar-burger {
     margin-left: auto;
     margin-right: auto;
+}
+.responsive {
+    max-width: 22%;
+    height: auto;
+    display: block;
+    margin: auto;
 }
 </style>
