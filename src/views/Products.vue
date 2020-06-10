@@ -9,7 +9,7 @@
 								<a>Todas</a>
 								<center>
 									<div class="column is-12">
-										<figure class="image is-64x64">
+										<figure class="image is-64x64 is-hidden-mobile">
 											<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
 										</figure>
 									</div>
@@ -63,8 +63,8 @@
 						<productCard
 							:image="product.path"
 							:product="product.name"
-							:description="product.description"
-							:custom_class="found_featured_class(product.category)"
+							:category="product.category"
+							:color="found_featured_color(product.category)"
 						/>
 					</div>
 				</template>
@@ -102,37 +102,43 @@ export default {
 					category: 'Pollo',
 					custom_class: 'resaltado-pollo',
 					ima: require('../assets/stockCatalogo/pollo/pollo entero.jpeg'),
-					tab_style: 'tab-pollo'
+					tab_style: 'tab-pollo',
+					color: '#faff81'
 				},
 				{
 					category: 'Cerdo',
 					custom_class: 'resaltado-cerdo',
 					ima: require('../assets/stockCatalogo/cerdo/pierna3.jpeg'),
-					tab_style: 'tab-cerdo'
+					tab_style: 'tab-cerdo',
+					color: '#f1b6ae'
 				},
 				{
 					category: 'Frutas',
 					custom_class: 'resaltado-fruta',
 					ima: require('../assets/stockCatalogo/frutas/frutas.png'),
-					tab_style: 'tab-fruta'
+					tab_style: 'tab-fruta',
+					color: '#66FF66'
 				},
 				{
 					category: 'Verduras',
 					custom_class: 'resaltado-verdura',
 					ima: require('../assets/stockCatalogo/verduras/verduras.jpeg'),
-					tab_style: 'tab-verdura'
+					tab_style: 'tab-verdura',
+					color: '#449c08'
 				},
 				{
 					category: 'Res',
 					custom_class: 'resaltado-res',
 					ima: require('../assets/stockCatalogo/res/res.jpeg'),
-					tab_style: 'tab-res'
+					tab_style: 'tab-res',
+					color: '#e97272'
 				},
 				{
 					category: 'Pescados',
 					custom_class: 'resaltado-pescado',
 					ima: require('../assets/stockCatalogo/pescado/pescados.jpg'),
-					tab_style: 'tab-pescado'
+					tab_style: 'tab-pescado',
+					color: '#296d92'
 				}
 			]
 		}
@@ -151,6 +157,12 @@ export default {
 			if (typeof(founded) == 'undefined')
 				return ''
 			return founded.custom_class
+		},
+		found_featured_color: function (category) {
+			let founded = this.featured_categories.find(o => o.category == category)
+			if (typeof(founded) == 'undefined')
+				return ''
+			return founded.color
 		},
 		get_satisfied: function () {
 			// Solo las categorías que están seleccionadas
