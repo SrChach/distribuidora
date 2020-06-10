@@ -2,72 +2,72 @@
 	<div class="section">
 		<div class="container is-fluid">
 			<div class="columns is-multiline is-mobile">
-				<div class="column is-12">
-					<div class="tabs is-centered is-toggle">
-						<ul>
-							<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
-								<a>Todas</a>
-								<center>
-									<div class="column is-12">
-										<figure class="image is-64x64 is-hidden-mobile">
-											<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
-										</figure>
-									</div>
-								</center>
-							</li>
-							<li 
-								v-for="(category, index) in featured_categories" :key="index"
-								:class= "(selected_category == category.category) ? 'is-active' : ''"
-								@click="selected_category = category.category"
-							>
-								<div class="columns is-multiline is-mobile is-centered ">
-									<div class="column is-12">
-										<a
-											:class="(selected_category == category.category) ? `${category.tab_style}`: ''"
-										>
-												{{category.category}}
-										</a>
-										<center>
+				<div
+					class="column is-10 is-offset-1"
+					:style="'height:auto; border-bottom: 2px solid ' + found_featured_color(selected_category)"
+				>
+					<div class="colums">
+
+						<div class="column is-12">
+							<div class="tabs is-centered is-toggle">
+								<ul>
+									<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
+										<a>Todas</a>
+									</li>
+									<li
+										v-for="(category, index) in featured_categories" :key="index"
+										:class= "(selected_category == category.category) ? 'is-active' : ''"
+										@click="selected_category = category.category"
+									>
+										<div class="columns is-multiline is-mobile is-centered ">
 											<div class="column is-12">
-												<figure class="image is-64x64 is-hidden-mobile">
-													<img v-show="(selected_category == category.category)" :src="category.ima">
-												</figure>
+												<a
+													:class="(selected_category == category.category) ? `${category.tab_style}`: ''"
+												>
+														{{category.category}}
+												</a>
 											</div>
-										</center>
-									</div>
-								</div>
-							</li>
-						</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
 					</div>
 				</div>
-				<template v-for="(product, index) in products">
-					<div
-						class="column is-full" :key="index + '-separador'"
-						v-if="
-							(index == 0 || product.category != products[index - 1].category)
-							&& [product.category, 'Todas'].includes(selected_category)
-						"
-					>
-						<div class="divider">
-							<figure class="image is-32x32">
-								<img class="is-rounded" src="@/assets/conchitalogo.jpeg" alt="Logo">
-							</figure>
-							{{ product.category }}
-						</div>
+				<div class="column is-10 is-offset-1" style="height: 80vh; overflow-y: scroll;">
+					<div class="columns is-multiline is-mobile">
+						<template v-for="(product, index) in products">
+							<div
+								class="column is-full" :key="index + '-separador'"
+								v-if="
+									(index == 0 || product.category != products[index - 1].category)
+									&& [product.category, 'Todas'].includes(selected_category)
+								"
+							>
+								<div class="divider">
+									<figure class="image is-32x32">
+										<img class="is-rounded" src="@/assets/conchitalogo.jpeg" alt="Logo">
+									</figure>
+									{{ product.category }}
+								</div>
+							</div>
+							<div
+								class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen is-2-full-screen"
+								v-show="filtered.includes(product.id)"
+								:key="index"
+							>
+								<productCard
+									:image="product.path"
+									:product="product.name"
+									:category="product.category"
+									:color="found_featured_color(product.category)"
+								/>
+							</div>
+						</template>
 					</div>
-					<div
-						class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen is-2-full-screen"
-						v-show="filtered.includes(product.id)"
-						:key="index"
-					>
-						<productCard
-							:image="product.path"
-							:product="product.name"
-							:category="product.category"
-							:color="found_featured_color(product.category)"
-						/>
-					</div>
-				</template>
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -161,7 +161,7 @@ export default {
 		found_featured_color: function (category) {
 			let founded = this.featured_categories.find(o => o.category == category)
 			if (typeof(founded) == 'undefined')
-				return ''
+				return '#209CEF'
 			return founded.color
 		},
 		get_satisfied: function () {
@@ -214,4 +214,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 	@import "@/styles/views/_products.scss";
+
+	.tabs {
+		overflow-x: hidden;
+	}
 </style>
