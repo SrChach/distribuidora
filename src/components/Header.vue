@@ -1,5 +1,18 @@
 <template>
     <div>
+        <div class="container is-fluid is-hidden-desktop">
+            <div class="columns is-multiline">
+                <div class="column is-12" style="padding-bottom: 0">
+                    <figure class="image container has-text-centered">
+                        <img
+                            class="is-rounded responsive"
+                            src="@/assets/LogoHeader.jpeg"
+                            alt="Logo de Distribuidora Conchita"
+                        >
+                    </figure>
+                </div>
+            </div>
+        </div>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <nav class="menu" id="app-header">
             <router-link :class="currentPage == '/' ? 'active' : ''" to="/">
