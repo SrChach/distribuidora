@@ -7,27 +7,34 @@
 						<ul>
 							<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
 								<a>Todas</a>
+								<center>
+									<div class="column is-12">
+										<figure class="image is-64x64">
+											<img src="@/assets/conchitalogo.jpeg">
+										</figure>
+									</div>
+								</center>
 							</li>
 							<li 
-								v-for="(category, index) in featured_categories" :key="index" 
+								v-for="(category, index) in featured_categories" :key="index"
 								:class= "(selected_category == category.category) ? 'is-active' : ''"
 								@click="selected_category = category.category"
-							> 
-							<!-- <div>
-							"(selected_category == category.category) ? 'is-active' : ''"
-							</div> -->
-
+							>
 								<div class="columns is-multiline is-mobile is-centered ">
 									<div class="column is-12">
-										<a :style="`background-color:${category.color}`">{{category.category}}</a>
-									<center>
-										<div class="column is-12">
-											<figure class="image is-64x64">
-												<img :src="category.ima">
-											</figure>
-										</div>
-									</center>																
-									</div>	
+										<a
+											:class="(selected_category == category.category) ? `${category.tab_style}`: ''"
+										>
+												{{category.category}}
+										</a>
+										<center>
+											<div class="column is-12">
+												<figure class="image is-64x64">
+													<img :src="category.ima">
+												</figure>
+											</div>
+										</center>
+									</div>
 								</div>
 							</li>
 						</ul>
@@ -95,37 +102,37 @@ export default {
 					category: 'Pollo',
 					custom_class: 'resaltado-pollo',
 					ima: require('../assets/stockCatalogo/pollo/pollo entero.jpeg'),
-					color: 'yellow'
+					tab_style: 'tab-pollo'
 				},
 				{
 					category: 'Cerdo',
 					custom_class: 'resaltado-cerdo',
 					ima: require('../assets/stockCatalogo/cerdo/pierna3.jpeg'),
-					color: 'pink'
+					tab_style: 'tab-cerdo'
 				},
 				{
 					category: 'Frutas',
 					custom_class: 'resaltado-fruta',
 					ima: require('../assets/stockCatalogo/frutas/frutas.png'),
-					color: 'green'
+					tab_style: 'tab-fruta'
 				},
 				{
 					category: 'Verduras',
 					custom_class: 'resaltado-verdura',
 					ima: require('../assets/stockCatalogo/verduras/verduras.jpeg'),
-					color: 'gray'
+					tab_style: 'tab-verdura'
 				},
 				{
 					category: 'Res',
 					custom_class: 'resaltado-res',
 					ima: require('../assets/stockCatalogo/res/res.jpeg'),
-					color: 'red'
+					tab_style: 'tab-res'
 				},
 				{
 					category: 'Pescados',
 					custom_class: 'resaltado-pescado',
 					ima: require('../assets/stockCatalogo/pescado/pescados.jpg'),
-					color: 'blue'
+					tab_style: 'tab-pescado'
 				}
 			]
 		}
@@ -193,16 +200,6 @@ export default {
 	}
 }
 </script>
-<style scoped>
-.a {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-.active, .a:hover {
-  background-color: #666;
-  color: white;
-}
+<style lang="scss" scoped>
+	@import "@/styles/views/_products.scss";
 </style>
