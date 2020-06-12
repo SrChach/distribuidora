@@ -2,72 +2,86 @@
 	<div class="section">
 		<div class="container is-fluid">
 			<div class="columns is-multiline is-mobile">
-				<div class="column is-12">
-					<div class="tabs is-centered is-toggle">
-						<ul>
-							<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
-								<a>Todas</a>
-								<center>
-									<div class="column is-12">
-										<figure class="image is-64x64">
-											<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
-										</figure>
-									</div>
-								</center>
-							</li>
-							<li 
-								v-for="(category, index) in featured_categories" :key="index"
-								:class= "(selected_category == category.category) ? 'is-active' : ''"
-								@click="selected_category = category.category"
-							>
-								<div class="columns is-multiline is-mobile is-centered ">
-									<div class="column is-12">
-										<a
-											:class="(selected_category == category.category) ? `${category.tab_style}`: ''"
-										>
-												{{category.category}}
-										</a>
+				<div
+					class="column is-10 is-offset-1"
+					:style="'height:auto; border-bottom: 2px solid ' + found_featured_color(selected_category)"
+				>
+					<div class="colums">
+
+						<div class="column is-12">
+							<div class="tabs is-centered is-toggle">
+								<ul>
+									<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
+										<a>Todas</a>
 										<center>
 											<div class="column is-12">
 												<figure class="image is-64x64 is-hidden-mobile">
-													<img v-show="(selected_category == category.category)" :src="category.ima">
+													<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
 												</figure>
 											</div>
 										</center>
-									</div>
-								</div>
-							</li>
-						</ul>
+									</li>
+									<li
+										v-for="(category, index) in featured_categories" :key="index"
+										:class= "(selected_category == category.category) ? 'is-active' : ''"
+										@click="selected_category = category.category"
+									>
+										<div class="columns is-multiline is-mobile is-centered ">
+											<div class="column is-12">
+												<a
+													:class="(selected_category == category.category) ? `${category.tab_style}`: ''"
+												>
+														{{category.category}}
+												</a>
+												<center>
+													<div class="column is-12">
+														<figure class="image is-64x64 is-hidden-mobile">
+															<img v-show="(selected_category == category.category)" :src="category.ima">
+														</figure>
+													</div>
+												</center>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
 					</div>
 				</div>
-				<template v-for="(product, index) in products">
-					<div
-						class="column is-full" :key="index + '-separador'"
-						v-if="
-							(index == 0 || product.category != products[index - 1].category)
-							&& [product.category, 'Todas'].includes(selected_category)
-						"
-					>
-						<div class="divider">
-							<figure class="image is-32x32">
-								<img class="is-rounded" src="@/assets/conchitalogo.jpeg" alt="Logo">
-							</figure>
-							{{ product.category }}
-						</div>
+				<div class="column is-10 is-offset-1" style="height: 80vh; overflow-y: scroll;">
+					<div class="columns is-multiline is-mobile">
+						<template v-for="(product, index) in products">
+							<div
+								class="column is-full" :key="index + '-separador'"
+								v-if="
+									(index == 0 || product.category != products[index - 1].category)
+									&& [product.category, 'Todas'].includes(selected_category)
+								"
+							>
+								<div class="divider">
+									<figure class="image is-32x32">
+										<img class="is-rounded" src="@/assets/conchitalogo.jpeg" alt="Logo">
+									</figure>
+									{{ product.category }}
+								</div>
+							</div>
+							<div
+								class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen is-2-full-screen"
+								v-show="filtered.includes(product.id)"
+								:key="index"
+							>
+								<productCard
+									:image="product.path"
+									:product="product.name"
+									:category="product.category"
+									:color="found_featured_color(product.category)"
+								/>
+							</div>
+						</template>
 					</div>
-					<div
-						class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen is-2-full-screen"
-						v-show="filtered.includes(product.id)"
-						:key="index"
-					>
-						<productCard
-							:image="product.path"
-							:product="product.name"
-							:description="product.description"
-							:custom_class="found_featured_class(product.category)"
-						/>
-					</div>
-				</template>
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -102,37 +116,43 @@ export default {
 					category: 'Pollo',
 					custom_class: 'resaltado-pollo',
 					ima: require('../assets/stockCatalogo/pollo/pollo entero.jpeg'),
-					tab_style: 'tab-pollo'
+					tab_style: 'tab-pollo',
+					color: '#faff81'
 				},
 				{
 					category: 'Cerdo',
 					custom_class: 'resaltado-cerdo',
 					ima: require('../assets/stockCatalogo/cerdo/pierna3.jpeg'),
-					tab_style: 'tab-cerdo'
+					tab_style: 'tab-cerdo',
+					color: '#f1b6ae'
 				},
 				{
 					category: 'Frutas',
 					custom_class: 'resaltado-fruta',
 					ima: require('../assets/stockCatalogo/frutas/frutas.png'),
-					tab_style: 'tab-fruta'
+					tab_style: 'tab-fruta',
+					color: '#66FF66'
 				},
 				{
 					category: 'Verduras',
 					custom_class: 'resaltado-verdura',
 					ima: require('../assets/stockCatalogo/verduras/verduras.jpeg'),
-					tab_style: 'tab-verdura'
+					tab_style: 'tab-verdura',
+					color: '#449c08'
 				},
 				{
 					category: 'Res',
 					custom_class: 'resaltado-res',
 					ima: require('../assets/stockCatalogo/res/res.jpeg'),
-					tab_style: 'tab-res'
+					tab_style: 'tab-res',
+					color: '#e97272'
 				},
 				{
 					category: 'Pescados',
 					custom_class: 'resaltado-pescado',
 					ima: require('../assets/stockCatalogo/pescado/pescados.jpg'),
-					tab_style: 'tab-pescado'
+					tab_style: 'tab-pescado',
+					color: '#296d92'
 				}
 			]
 		}
@@ -151,6 +171,12 @@ export default {
 			if (typeof(founded) == 'undefined')
 				return ''
 			return founded.custom_class
+		},
+		found_featured_color: function (category) {
+			let founded = this.featured_categories.find(o => o.category == category)
+			if (typeof(founded) == 'undefined')
+				return '#209CEF'
+			return founded.color
 		},
 		get_satisfied: function () {
 			// Solo las categorías que están seleccionadas
@@ -202,4 +228,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 	@import "@/styles/views/_products.scss";
+
+	.tabs {
+		overflow-x: hidden;
+	}
 </style>

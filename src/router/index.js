@@ -30,7 +30,7 @@ const router = new VueRouter({
         selector: to.hash
       }
     } else {
-      return { x: 0, y: 120 }
+      // return { x: 0, y: 120 }
     }
   }
 })

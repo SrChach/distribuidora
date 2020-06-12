@@ -1,11 +1,27 @@
 <template>
     <div>
+        <div class="container is-fluid is-hidden-desktop">
+            <div class="columns is-multiline">
+                <div class="column is-12" style="padding-bottom: 0">
+                    <figure class="image container has-text-centered">
+                        <img
+                            class="is-rounded responsive"
+                            src="@/assets/LogoHeader.jpeg"
+                            alt="Logo de Distribuidora Conchita"
+                        >
+                    </figure>
+                </div>
+            </div>
+        </div>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <nav class="menu" >
-            <a href="#" class="active" title="Home" ><i class="far fade-enter-active"></i> Productos </a>
-            <a href="about" title="About"><i class="far fa-address-card"></i> Mas Informacion </a>
-            <a href="#footer" title="Contact"><i class="fas fa-mobile-alt"></i> Contactanos </a>
+        <nav class="menu" id="app-header">
+            <router-link :class="currentPage == '/' ? 'active' : ''" to="/">
+                <i class="fas fa-utensils"></i> Productos
+            </router-link>
+            <router-link :class="currentPage.includes('about') ? 'active' : ''" to="/about">
+                <i class="far fa-address-card"></i> Mas informacion
+            </router-link>
+            <a href="#footer" title="Contact"><i class="fas fa-phone"></i> Contactanos </a>
             <a href="javascript:void(0);" class="icon" @submit.prevent="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -16,21 +32,7 @@
 <script>
 
 export default {
-    data: function () {
-        return {
-            is_top: true
-        }
-    },
-    created () {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    destroyed () {
-        window.removeEventListener('scroll', this.handleScroll);
-    },
     methods: {
-        handleScroll () {
-            this.is_top = (window.scrollY <= 120) ? true : false;
-        },
         myFunction () {
             var x = document.getElementById("myTopnav");
             if (x.className === "menu") {
@@ -39,8 +41,12 @@ export default {
                 x.className = "menu";
             }
         } 
+    },
+    computed: {
+        currentPage: function () {
+            return this.$route.path
+        }
     }
-    
 }
 </script>
 
