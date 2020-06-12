@@ -246,7 +246,7 @@ body{
         transition: all .3s ease-in;
     }
  
-    .active, .animacion:hover{
+    .animacion:hover{
         color: #00007c;
         padding: 6px 0px;
              
