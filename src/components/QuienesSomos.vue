@@ -20,13 +20,35 @@
                 </a>
                 <a class="has-text-black is-size-7-mobile">
                     <p class="has-text-justified is-family-secondary p1margen">
-                        Dedicada a la distribución de productos alimenticios
-                        y especialistas en Restaurantes, Restaurantes Gourmet,
-                        Comedores Industriales y ventas por mayoreo, con mas de 
-                        30 años de experiencia. <br>
-                        Ofrecemos un servicio de calidad en cada uno de nuestros
-                        productos ya que sabemos la importancia que es una
-                        alimentación sana para todo ser humano.
+                        Somos una empresa con experiencia en la distribución de productos alimenticios.
+                        <br>
+                        Especializados en productos para Restaurantes Gourmet, Comedores industriales, hoteles y ventas de mayoreo.
+                        <br>
+                        Contando con más de 30 años de experiencia.
+                        <br>
+                        Ofreciendo un servicio de calidad en cada uno de nuestros productos, ya que sabemos  la importancia de una sana alimentación.
+                        En Distribuidora Conchita nos caracterizamos por ser una empresa comprometida con cada uno de nuestros clientes, ya que ofrecemos un servicio de calidad en la entrega de cada uno de nuestros productos .
+                        <br>
+                        <br>
+                        <br>
+                        <span class="title is-6 is-mega-menu-title">
+                                 <p class="has-text-centered is-size-6-mobile">
+                                        Visión:
+                                 </p>
+                          </span>
+                        <br>
+                        Ser una distribuidora reconocida por la alta calidad en nuestro productos alimenticios y por nuestro servicio puntual y oportuno,
+                        <br>
+                            Dejando así en nuestro clientes una buena experiencia de confiabilidad.
+                        <br>
+                        <br>
+                        <span class="title is-6 is-mega-menu-title">
+                                     <p class="has-text-centered is-size-6-mobile">
+                                            Misión:
+                                     </p>
+                              </span>
+                    <br>
+                        Ser la distribuidora líder en el mercado, buscando la excelencia en nuestros productos y servicios.
                     </p>
                 </a>
             </div>

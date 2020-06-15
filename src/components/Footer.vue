@@ -12,7 +12,7 @@
                             <a class="bigFuntion" href="https://www.facebook.com/Distribuidora-Conchita-136746656733647/" target="_blank" :style="{color: 'blue'}">
                                 <font-awesome-icon :icon="icons['faFacebookSquare']" size="3x"/>
                             </a>
-                            <a class="bigFuntion" href="https://api.WhatsApp.com/send?phone=+525529424988" target="_blank">
+                            <a class="bigFuntion" href="https://www.instagram.com/distribuidoraconchitaoficial/" target="_blank">
                                 <font-awesome-icon :icon="icons['faInstagramSquare']" size="3x" :style="{color:'deeppink'}"/>
                             </a>
                         </div>
