@@ -125,7 +125,7 @@ export default [
         category: 'Res',
         price: 0.0,
         description: '',
-        path: 'stockCatalogo/res/chamabarete s:hueso3.jpeg'
+        path: 'stockCatalogo/res/chamabarete_s_hueso3.jpeg'
     },
     {
         id: 19,
@@ -133,7 +133,7 @@ export default [
         category: 'Res',
         price: 0.0,
         description: '',
-        path: 'stockCatalogo/res/chambarete c:hueso3.jpeg'
+        path: 'stockCatalogo/res/chambarete_c_hueso3.jpeg'
     },
     {
         id: 20,

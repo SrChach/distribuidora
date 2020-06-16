@@ -1,6 +1,5 @@
 <template>
     <div>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <div :style="'height: ' + nav_height + 'px'"></div>
         <b-navbar class="animacion" fixed-top id="navv" ref="navv">
             <template slot="brand">
@@ -11,18 +10,18 @@
             <template slot="start">
                 <b-navbar-item >
                     <router-link :class="currentPage == '/' ? 'active' : ''" to="/">
-                        <i class="fas fa-utensils"></i> Productos
+                        <font-awesome-icon :icon="faUtensils"/> Productos
                     </router-link>
                 </b-navbar-item>
                 <b-navbar-item >
                     <router-link :class="currentPage.includes('about') ? 'active' : ''" to="/about">
-                        <i class="far fa-address-card"></i> Mas informacion
+                        <font-awesome-icon :icon="faAddressCard"/> Mas informacion
                     </router-link>
                 </b-navbar-item>
             </template>
             <template slot="end">
                 <b-navbar-item>
-                    <a href="#footer" title="Contact"><i class="fas fa-phone"></i> Contactanos </a>
+                    <a href="#footer" title="Contact"><font-awesome-icon :icon="faPhone"/> Contactanos </a>
                 </b-navbar-item>
             </template>
         </b-navbar>
@@ -30,7 +29,14 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faPhone, faUtensils } from '@fortawesome/free-solid-svg-icons'
+import { faAddressCard } from '@fortawesome/free-regular-svg-icons'
+
 export default {
+    components: {
+        'font-awesome-icon': FontAwesomeIcon
+    },
     created: function () {
         window.addEventListener("resize", this.calculateHeight);
     },
@@ -45,18 +51,17 @@ export default {
 
         setTimeout(function () {
             window.dispatchEvent(new Event('resize'));
-        }, 5000);
-        
-        setTimeout(function () {
-            window.dispatchEvent(new Event('resize'));
-        }, 10000);
+        }, 3000);
     },
     destroyed: function () {
         window.addEventListener("resize", this.calculateHeight);
     },
     data: function () {
         return {
-            nav_height: 0
+            nav_height: 0,
+            faPhone,
+            faUtensils,
+            faAddressCard
         }
     },
     methods: {
