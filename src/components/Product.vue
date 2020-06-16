@@ -37,9 +37,12 @@ export default {
 
 .box-wrapper {
     overflow: hidden;
-    box-shadow: 0px 5px 43px rgba( 0, 0, 0, 0.48 );
     padding: 0;
     text-align: center;
+
+    &:hover {
+        box-shadow: 0px 5px 43px rgba( 0, 0, 0, 0.48 );
+    }
 
     img {
         width: 100%;
@@ -58,6 +61,17 @@ export default {
     font-family: 'Satisfy', cursive;
     font-size: 1.2em;
     margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1023px) {
+    .title {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+
+    .desc {
+        font-size: 1em;
+    }
 }
 
 .box-content{

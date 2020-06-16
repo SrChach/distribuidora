@@ -1,10 +1,11 @@
 <template>
     <div>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-         <b-navbar class="animacion" fixed-top>
+        <div :style="'height: ' + nav_height + 'px'"></div>
+        <b-navbar class="animacion" fixed-top id="navv" ref="navv">
             <template slot="brand">
-                <b-navbar-item>
-                        <img class="logo" src="../assets/LogoHeader.jpeg" alt="LogoHeader"> 
+                <b-navbar-item id="brandd" ref="brandd">
+                    <img class="logo" src="../assets/LogoHeader.jpeg" alt="LogoHeader">
                 </b-navbar-item>
             </template>
             <template slot="start">
@@ -30,8 +31,38 @@
 
 <script>
 export default {
-    methods: {
+    created: function () {
+        window.addEventListener("resize", this.calculateHeight);
+    },
+    mounted: function () {
+        setTimeout(function () {
+            window.dispatchEvent(new Event('resize'));
+        }, 500);
 
+        setTimeout(function () {
+            window.dispatchEvent(new Event('resize'));
+        }, 1500);
+
+        setTimeout(function () {
+            window.dispatchEvent(new Event('resize'));
+        }, 5000);
+        
+        setTimeout(function () {
+            window.dispatchEvent(new Event('resize'));
+        }, 10000);
+    },
+    destroyed: function () {
+        window.addEventListener("resize", this.calculateHeight);
+    },
+    data: function () {
+        return {
+            nav_height: 0
+        }
+    },
+    methods: {
+        calculateHeight() {
+            this.nav_height = this.$refs.navv.$el.scrollHeight
+        }
     },
     computed: {
         currentPage: function () {
@@ -41,6 +72,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @import '../styles/components/_header.scss';
 </style>
