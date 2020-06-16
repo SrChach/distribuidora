@@ -42,6 +42,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="slide3">
+
+                </div>
                 <div class="slide2">
                     <div class="columns">
                         <div class="column">
@@ -81,6 +84,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="slide4">
                 </div>
                 <br>
                 <br>
@@ -124,13 +129,23 @@
 }
 .slide1 {
     animation:fade 10s infinite;
-    -webkit-animation:fade 45s infinite;
+    -webkit-animation:fade 25s infinite;
 
 }
 .slide2 {
     animation:fade2 15s infinite;
-    -webkit-animation:fade2 40s infinite;
+    -webkit-animation:fade2 20s infinite;
 }
+.slide3 {
+    animation:fade2 2s infinite;
+    -webkit-animation:fade2 5s infinite;
+}
+.slide4 {
+    animation:fade2 2s infinite;
+    -webkit-animation:fade2 5s infinite;
+}
+
+
 
 @keyframes fade
 {
