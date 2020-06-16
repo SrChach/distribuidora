@@ -1,5 +1,5 @@
 <template>
-        <div class="box-wrapper" :style="`background-color: ${color}`">
+        <div :class="['box-wrapper', `resaltado-${category}`]" :style="`background-color: ${color}`">
             <figure class="image is-4by5">
                 <img :src="require(`@/assets/${image}`)" alt="rhcp" />
             </figure>
@@ -35,14 +35,16 @@ export default {
 @import url(https://fonts.googleapis.com/css?family=Satisfy);
 @import url(https://fonts.googleapis.com/css?family=Acme);
 
+@import '@/styles/components/_product.scss';
+
 .box-wrapper {
     overflow: hidden;
     padding: 0;
     text-align: center;
 
-    &:hover {
-        box-shadow: 0px 5px 43px rgba( 0, 0, 0, 0.48 );
-    }
+    // &:hover {
+    //     box-shadow: 0px 5px 43px rgba( 0, 0, 0, 0.48 );
+    // }
 
     img {
         width: 100%;
