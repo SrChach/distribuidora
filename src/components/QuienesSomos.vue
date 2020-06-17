@@ -86,33 +86,46 @@
     min-height: 600px;
 }
 
-.slide1,.slide2,.slide3,.slide4,.slide5 {
+.slide1,.slide2,.slide3,.slide4{
     position: absolute;
     width: 100%;
     height: 100%;
 }
 .slide1 {
-    animation-name: fade;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
+    animation:fade 30s infinite;
+    -webkit-animation:fade 30s infinite;
 }
 .slide2 {
-    animation:fade 15s infinite;
-    -webkit-animation:fade2 20s infinite;
+    animation:fade2 30s infinite;
+    -webkit-animation:fade2 30s infinite;
 }
 
 @keyframes fade
 {
     0%   {opacity:1}
-    33.333% { opacity: 0}
-    66.666% { opacity: 0}
+    10% { opacity: 1}
+    20% { opacity: 1}
+    30% { opacity: 1}
+    40% { opacity: 1}
+    50% { opacity: 0}
+    60% { opacity: 0}
+    70% { opacity: 0}
+    80% { opacity: 0}
+    90% { opacity: 0}
     100% { opacity: 1}
 }
 @keyframes fade2
 {
     0%   {opacity:0}
-    33.333% { opacity: 1}
-    66.666% { opacity: 0 }
+    10% { opacity: 0}
+    20% { opacity: 0}
+    30% { opacity: 0}
+    40% { opacity: 0}
+    50% { opacity: 1}
+    60% { opacity: 1}
+    70% { opacity: 1}
+    80% { opacity: 1}
+    90% { opacity: 1}
     100% { opacity: 0}
 }
 
