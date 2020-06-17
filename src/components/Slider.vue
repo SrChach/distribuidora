@@ -16,11 +16,11 @@ export default {
     data(){
         return {
             carousels: [
-                { text: 'Pollo', rutaImage: require('../assets/carrusel/img_uno.jpg') },
+                { text: 'Pollo', rutaImage: require('../assets/carrusel/img_cinco.jpeg') },
                 { text: 'Huevos', rutaImage: require('../assets/carrusel/2.png') },
                 { text: 'Carne', rutaImage: require('../assets/carrusel/3.png') },
                 { text: 'Pescado', rutaImage: require('../assets/carrusel/4.png') },
-                { text: 'Pescado', rutaImage: require('../assets/carrusel/img_cinco.jpeg') },
+                { text: 'Pescado', rutaImage: require('../assets/carrusel/img_uno.jpg') },
                 { text: 'Pescado', rutaImage: require('../assets/carrusel/6.png') },
                 { text: 'Pescado', rutaImage: require('../assets/carrusel/7.png') },
                 { text: 'Pescado', rutaImage: require('../assets/carrusel/8.png') }
