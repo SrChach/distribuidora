@@ -114,42 +114,37 @@ export default {
 			featured_categories: [
 				{
 					category: 'Pollo',
-					custom_class: 'resaltado-pollo',
+					priority: 1,
 					ima: require('../assets/stockCatalogo/pollo/pollo entero.jpeg'),
 					tab_style: 'tab-pollo',
 					color: '#faff81'
 				},
 				{
 					category: 'Cerdo',
-					custom_class: 'resaltado-cerdo',
 					ima: require('../assets/stockCatalogo/cerdo/pierna3.jpeg'),
 					tab_style: 'tab-cerdo',
 					color: '#f1b6ae'
 				},
 				{
 					category: 'Frutas',
-					custom_class: 'resaltado-fruta',
 					ima: require('../assets/stockCatalogo/frutas/frutas.png'),
 					tab_style: 'tab-fruta',
 					color: '#66FF66'
 				},
 				{
 					category: 'Verduras',
-					custom_class: 'resaltado-verdura',
 					ima: require('../assets/stockCatalogo/verduras/verduras.jpeg'),
 					tab_style: 'tab-verdura',
 					color: '#449c08'
 				},
 				{
 					category: 'Res',
-					custom_class: 'resaltado-res',
 					ima: require('../assets/stockCatalogo/res/res.jpeg'),
 					tab_style: 'tab-res',
 					color: '#e97272'
 				},
 				{
 					category: 'Pescados',
-					custom_class: 'resaltado-pescado',
 					ima: require('../assets/stockCatalogo/pescado/pescados.jpg'),
 					tab_style: 'tab-pescado',
 					color: '#296d92'
@@ -231,5 +226,9 @@ export default {
 
 	.tabs {
 		overflow-x: hidden;
+	}
+
+	.divider::after, .divider::before {
+		height: 10px;
 	}
 </style>
