@@ -2,10 +2,6 @@
         padding-top: 0 !important;
     }
 
-    .navbar-burger {
-        margin-left: auto;
-        margin-right: 40%;
-    }
     .responsive {
         max-width: 22%;
         height: auto;
@@ -28,13 +24,35 @@
         display: inline-block;
         margin: 0 0.5rem;
     }
+
     @media only screen and (max-width: 1023px) {
+        .navbar-brand .navbar-item {
+            margin-right: auto;
+            margin-left: auto;
+            left: 26px;
+        }
+
+        .navbar-burger{
+            margin-left: 0 !important;
+        }
+
         .navbar-item {
             margin-top: 1.5rem;
             margin-bottom: 1.5rem;
         }
     }
 
+    @media only screen and (min-width: 1024px) {
+        .navbar-brand img {
+            max-height: 5rem !important;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .navbar-brand a {
+            padding: 0 1rem !important;
+        }
+    }
 
     @-webkit-keyframes up-underline {
     0% { padding: 20px 0px; }    
