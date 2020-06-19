@@ -27,6 +27,8 @@
                     <h2><b>Visítanos en:</b></h2>
                     <span>
                         Mercado Jamaica Zona, local 276, Jamaica, Venustiano Carranza, 15800 Ciudad de México
+                        <br>
+                        Horario de Atención: 7:00 AM a 18:00 PM
                     </span>
                     <my-map :coordinates="[19.408495, -99.122652]"/>
                 </div>

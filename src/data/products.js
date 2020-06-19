@@ -201,11 +201,11 @@ export default [
     },
     {
         id: 29,
-        name: 'Chuleta',
+        name: 'Chuleta Natural',
         category: 'Cerdo',
         price: 0.0,
         description: '',
-        path: 'stockCatalogo/cerdo/chuletanatural3.jpeg'
+        path: 'stockCatalogo/cerdo/chuleNatural.jpeg'
     },
     {
         id: 30,
@@ -470,6 +470,15 @@ export default [
         price: 0.0,
         description: '',
         path: 'stockCatalogo/pescado/camaron-crudo.jpg'
-    }
+    },
+    {
+        id: 65,
+        name: 'Tilapia',
+        category: 'Pescados',
+        price: 0.0,
+        description: '',
+        path: 'stockCatalogo/pescado/tilapia.jpeg'
+    },
+
 
 ]
