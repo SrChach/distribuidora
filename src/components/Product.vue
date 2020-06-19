@@ -1,11 +1,14 @@
 <template>
-        <div :class="['box-wrapper', `resaltado-${category}`]" :style="`background-color: ${color}`">
+        <div :class="['box-wrapper', `resaltado-${category}`]">
             <figure class="image is-4by5">
                 <img :src="require(`@/assets/${image}`)" alt="rhcp" />
             </figure>
-            <div class="box-content" :style="`background-color: ${color}`">
-                <div class="title">{{ product }}</div>
-                <div class="desc">{{ category }}</div>
+            <div class="box-content">
+                <div class="title">
+                    <span :style="`box-shadow: inset 0 -0.175em white, inset 0 -0.3em ${color};`">
+                        {{ product }}
+                    </span>
+                </div>
                 <!-- <span class="price">{{ price }}</span> -->
             </div>
         </div>
@@ -33,7 +36,6 @@ export default {
 
 <style lang="scss" scoped>
 @import url(https://fonts.googleapis.com/css?family=Satisfy);
-@import url(https://fonts.googleapis.com/css?family=Acme);
 
 @import '@/styles/components/_product.scss';
 
@@ -52,46 +54,21 @@ export default {
 }
 
 .title {
-    font-size: 2em;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0;
-    font-family: 'Acme', sans-serif;
-}
-
-.desc {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 1rem 0;
     font-family: 'Satisfy', cursive;
-    font-size: 1.2em;
-    margin-bottom: 1rem;
 }
 
 @media only screen and (max-width: 1023px) {
     .title {
-        font-size: 1.5rem;
-        font-weight: 400;
-    }
-
-    .desc {
-        font-size: 1em;
+        font-size: 1.3em;
     }
 }
 
 .box-content{
     position: relative;
     z-index: 1;
-
-    &:before {
-        content: '';
-        width: 200%;
-        height: 100px;
-        position: absolute;
-        display: block;
-        background-color: inherit;
-        transform: rotate(-8deg);
-        top: -50px;
-        left: -10%;
-        z-index: -1;
-    }
 
     .price {
         font-size: 2em;
