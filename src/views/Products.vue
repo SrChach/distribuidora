@@ -1,5 +1,6 @@
 <template>
-	<div class="section">
+	<div class="">
+		<br>
 		<div class="container is-fluid">
 			<div class="columns is-multiline is-tablet is-widescreen is-touch is-mobile">
 				<div
@@ -12,10 +13,11 @@
 							<div class="tabs is-centered is-toggle">
 								<ul>
 									<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
-										<a>Todas
-										<figure class="image is-32x32 is-hidden-mobile" style="margin-left: 1rem">
-											<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
-										</figure>
+										<a>
+											<figure class="image is-32x32 is-hidden-mobile" style="margin-top: .5rem">
+												<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
+											</figure>
+											<img style="margin-left: 1rem" class="imagen" src="../assets/todos.png" alt="ategoryIma">
 										</a>
 									</li>
 									<li
@@ -28,10 +30,10 @@
 												<a
 													:class="(selected_category == category.category) ? `${category.tab_style}` : ''"
 												>
-															<img class="imagen" :src="category.categoryIma" :alt="category.categoryIma">
-															<figure class="image is-32x32 is-hidden-mobile" style="margin-left: 1rem">
+														<figure class="image is-32x32 is-hidden-mobile" style="margin-top: 1rem">
 															<img v-show="(selected_category == category.category)" :src="category.ima">
 														</figure>
+															<img style="margin-left: 1rem" class="imagen" :src="category.categoryIma" :alt="category.categoryIma">
 												</a>
 											</div>
 										</div>
@@ -77,6 +79,7 @@
 
 			</div>
 		</div>
+		<br>
 	</div>
 </template>
 

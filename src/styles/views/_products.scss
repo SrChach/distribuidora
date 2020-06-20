@@ -2,6 +2,7 @@
 .tab-pollo {
     border-color: #de9c14 !important;
     background-color: #ffffff !important;
+    border-width: medium;
 }
 .tab-cerdo {
     border-color: #af6f67 !important;
@@ -16,6 +17,13 @@
 .tab-verdura {
     border-color: #3d8306 !important;
     background-color: #ffffff !important;
+}
+.tabs.is-toggle li.is-active a {
+    background-color: rgb(255, 255, 255);
+    border-color: #209CEF;
+    color: #fff;
+    z-index: 1;
+    border-width: 5px;
 }
 
 .tab-res {

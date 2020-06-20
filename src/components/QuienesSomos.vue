@@ -35,7 +35,7 @@
         <div class="slide2 columns is-vcentered margin-updown-2">
             <div class="column">
                 <figure class="image is-2by1">
-                    <img src="../assets/carrusel/img_dos.jpeg" alt="imagen 5">
+                    <img src="../assets/recorte_blanco.jpg" alt="imagen 5">
                 </figure>
             </div>
             <div class="column">
