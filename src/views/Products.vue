@@ -1,7 +1,7 @@
 <template>
 	<div class="section">
 		<div class="container is-fluid">
-			<div class="columns is-multiline is-mobile">
+			<div class="columns is-multiline is-tablet is-widescreen is-touch is-mobile">
 				<div
 					class="column is-10 is-offset-1"
 					:style="'height:auto; border-bottom: 2px solid ' + found_featured_color(selected_category)"
@@ -12,34 +12,27 @@
 							<div class="tabs is-centered is-toggle">
 								<ul>
 									<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
-										<a>Todas</a>
-										<center>
-											<div class="column is-12">
-												<figure class="image is-64x64 is-hidden-mobile">
-													<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
-												</figure>
-											</div>
-										</center>
+										<a>Todas
+										<figure class="image is-32x32 is-hidden-mobile" style="margin-left: 1rem">
+											<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
+										</figure>
+										</a>
 									</li>
 									<li
 										v-for="(category, index) in featured_categories" :key="index"
 										:class= "(selected_category == category.category) ? 'is-active' : ''"
 										@click="selected_category = category.category"
 									>
-										<div class="columns is-multiline is-mobile is-centered ">
+										<div class="columns is-multiline is-mobile ">
 											<div class="column is-12">
 												<a
-													:class="(selected_category == category.category) ? `${category.tab_style}`: ''"
+													:class="(selected_category == category.category) ? `${category.tab_style}` : ''"
 												>
-														{{category.category}}
-												</a>
-												<center>
-													<div class="column is-12">
-														<figure class="image is-64x64 is-hidden-mobile">
+															<img class="imagen" :src="category.categoryIma" :alt="category.categoryIma">
+															<figure class="image is-32x32 is-hidden-mobile" style="margin-left: 1rem">
 															<img v-show="(selected_category == category.category)" :src="category.ima">
 														</figure>
-													</div>
-												</center>
+												</a>
 											</div>
 										</div>
 									</li>
@@ -117,38 +110,45 @@ export default {
 					priority: 1,
 					ima: require('../assets/stockCatalogo/pollo/pollo entero.jpeg'),
 					tab_style: 'tab-pollo',
-					color: '#faff81'
+					color: '#faff81',
+					categoryIma: require('../assets/featured_categories/pollomini.png')
 				},
 				{
 					category: 'Cerdo',
 					ima: require('../assets/stockCatalogo/cerdo/pierna3.jpeg'),
 					tab_style: 'tab-cerdo',
-					color: '#f1b6ae'
-				},
-				{
-					category: 'Frutas',
-					ima: require('../assets/stockCatalogo/frutas/frutas.png'),
-					tab_style: 'tab-fruta',
-					color: '#66FF66'
-				},
-				{
-					category: 'Verduras',
-					ima: require('../assets/stockCatalogo/verduras/verduras.jpeg'),
-					tab_style: 'tab-verdura',
-					color: '#449c08'
+					color: '#f1b6ae',
+					categoryIma: require('../assets/featured_categories/cerdomini.png')
 				},
 				{
 					category: 'Res',
 					ima: require('../assets/stockCatalogo/res/res.jpeg'),
 					tab_style: 'tab-res',
-					color: '#e97272'
+					color: '#e97272',
+					categoryIma: require('../assets/featured_categories/res transparente.png')
 				},
 				{
 					category: 'Pescados',
 					ima: require('../assets/stockCatalogo/pescado/pescados.jpg'),
 					tab_style: 'tab-pescado',
-					color: '#296d92'
+					color: '#296d92',
+					categoryIma:require('../assets/featured_categories/pescadomini.png')
+				},
+				{
+					category: 'Frutas',
+					ima: require('../assets/stockCatalogo/frutas/frutas.png'),
+					tab_style: 'tab-fruta',
+					color: '#66FF66',
+					categoryIma: require('../assets/featured_categories/frutasmini.png')
+				},
+				{
+					category: 'Verduras',
+					ima: require('../assets/stockCatalogo/verduras/verduras.jpeg'),
+					tab_style: 'tab-verdura',
+					color: '#449c08',
+					categoryIma: require('../assets/featured_categories/verdurasmini.png')
 				}
+
 			]
 		}
 	},
@@ -230,5 +230,9 @@ export default {
 
 	.divider::after, .divider::before {
 		height: 10px;
+	}
+	.imagen{
+		height: 1.7rem;
+		width: auto;
 	}
 </style>
