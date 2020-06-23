@@ -5,7 +5,7 @@
             </figure>
             <div class="box-content">
                 <div class="title">
-                    <span :style="`box-shadow: inset 0 -0.175em white, inset 0 -0.3em ${color};`">
+                    <span :style="`box-shadow: white 0px -0.175em inset, ${color} 0px 0.1em;`">
                         {{ product }}
                     </span>
                 </div>
