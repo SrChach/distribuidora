@@ -1,5 +1,5 @@
 <template>
-    <div class="container minh-600">
+    <div class="container minh-600" id="about">
         <div class="slide1 columns is-vcentered margin-updown-2">
             <div class="column">
                 <span class="title is-6 is-mega-menu-title">

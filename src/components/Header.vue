@@ -2,17 +2,19 @@
     <div>
         <div :style="'height: ' + nav_height + 'px'"></div>
         <b-navbar class="animacion" fixed-top id="navv" ref="navv">
-            <template slot="end">
+            <template slot="brand">
                 <b-navbar-item id="brandd" ref="brandd">
                     <img class="logo" src="../assets/LogoHeader.jpeg" alt="LogoHeader">
                 </b-navbar-item>
+            </template>
+            <template slot="end">
                 <b-navbar-item >
                     <router-link :class="currentPage == '/' ? 'active' : ''" to="/#products">
                         <font-awesome-icon :icon="faUtensils"/> Productos
                     </router-link>
                 </b-navbar-item>
                 <b-navbar-item >
-                    <router-link :class="currentPage.includes('about') ? 'active' : ''" to="/about">
+                    <router-link :class="currentPage.includes('about') ? 'active' : ''" to="/about#about">
                         <font-awesome-icon :icon="faAddressCard"/> Mas informacion
                     </router-link>
                 </b-navbar-item>

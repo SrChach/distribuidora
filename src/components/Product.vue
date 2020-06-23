@@ -52,15 +52,15 @@ export default {
 }
 
 .title {
-    font-size: 1.5em;
-    font-weight: 500;
+    font-size: 1.3em;
+    font-weight: 600;
     margin: 1rem 0;
-    font-family: Helvetica, sans-serif;
+    font-family: Arial, Helvetica;
 }
 
 @media only screen and (max-width: 1023px) {
     .title {
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
 }
 
