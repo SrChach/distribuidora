@@ -51,6 +51,6 @@ $footer-background-color: $light;
   color: #2c3e50;
 }
 
-html {
+html, .scrollsmooth {
   scroll-behavior: smooth;
 }

@@ -35,8 +35,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url(https://fonts.googleapis.com/css?family=Satisfy);
-
 @import '@/styles/components/_product.scss';
 
 .box-wrapper {
@@ -57,7 +55,7 @@ export default {
     font-size: 1.5em;
     font-weight: 500;
     margin: 1rem 0;
-    font-family: 'Satisfy', cursive;
+    font-family: Helvetica, sans-serif;
 }
 
 @media only screen and (max-width: 1023px) {

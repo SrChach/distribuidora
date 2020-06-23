@@ -13,7 +13,7 @@
 							<div class="tabs is-centered is-toggle">
 								<ul>
 									<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
-										<a>
+										<a href="#category-Pollo">
 											<figure class="image is-32x32 is-hidden-mobile" style="margin-top: .5rem">
 												<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
 											</figure>
@@ -28,12 +28,12 @@
 										<div class="columns is-multiline is-mobile ">
 											<div class="column is-12">
 												<a
-													:class="(selected_category == category.category) ? `${category.tab_style}` : ''"
+													:class="(selected_category == category.category) ? `${category.tab_style}` : ''" :href="`#category-${category.category}`"
 												>
 														<figure class="image is-32x32 is-hidden-mobile" style="margin-top: 1rem">
 															<img v-show="(selected_category == category.category)" :src="category.ima">
 														</figure>
-															<img style="margin-left: 1rem" class="imagen" :src="category.categoryIma" :alt="category.categoryIma">
+														<img style="margin-left: 1rem" class="imagen" :src="category.categoryIma" :alt="category.categoryIma">
 												</a>
 											</div>
 										</div>
@@ -44,15 +44,12 @@
 
 					</div>
 				</div>
-				<div class="column is-10 is-offset-1" style="height: 80vh; overflow-y: scroll;">
+				<div class="column is-10 is-offset-1 scrollsmooth" style="height: 80vh; overflow-y: scroll;">
 					<div class="columns is-multiline is-mobile">
 						<template v-for="(product, index) in products">
 							<div
-								class="column is-full" :key="index + '-separador'"
-								v-if="
-									(index == 0 || product.category != products[index - 1].category)
-									&& [product.category, 'Todas'].includes(selected_category)
-								"
+								class="column is-full" :key="index + '-separador'" :id="`category-${product.category}`"
+								v-if="(index == 0 || product.category != products[index - 1].category)"
 							>
 								<div class="divider">
 									<figure class="image is-32x32">
@@ -63,7 +60,6 @@
 							</div>
 							<div
 								class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen is-2-full-screen"
-								v-show="filtered.includes(product.id)"
 								:key="index"
 							>
 								<productCard
