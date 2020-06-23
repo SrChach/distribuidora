@@ -3,11 +3,14 @@
         <div :style="'height: ' + nav_height + 'px'"></div>
         <b-navbar class="animacion" fixed-top id="navv" ref="navv">
             <template slot="brand">
-                <b-navbar-item id="brandd" ref="brandd">
+                <b-navbar-item id="brandd" ref="brandd" class="is-hidden-desktop">
                     <img class="logo" src="../assets/LogoHeader.jpeg" alt="LogoHeader">
                 </b-navbar-item>
             </template>
             <template slot="end">
+                <b-navbar-item id="brandd" ref="brandd" class="is-hidden-touch" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                    <img class="logo" src="../assets/LogoHeader.jpeg" alt="LogoHeader">
+                </b-navbar-item>
                 <b-navbar-item >
                     <router-link :class="currentPage == '/' ? 'active' : ''" to="/#products">
                         <font-awesome-icon :icon="faUtensils"/> Productos
