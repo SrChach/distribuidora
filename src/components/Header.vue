@@ -2,14 +2,12 @@
     <div>
         <div :style="'height: ' + nav_height + 'px'"></div>
         <b-navbar class="animacion" fixed-top id="navv" ref="navv">
-            <template slot="brand">
+            <template slot="end">
                 <b-navbar-item id="brandd" ref="brandd">
                     <img class="logo" src="../assets/LogoHeader.jpeg" alt="LogoHeader">
                 </b-navbar-item>
-            </template>
-            <template slot="start">
                 <b-navbar-item >
-                    <router-link :class="currentPage == '/' ? 'active' : ''" to="/">
+                    <router-link :class="currentPage == '/' ? 'active' : ''" to="/#products">
                         <font-awesome-icon :icon="faUtensils"/> Productos
                     </router-link>
                 </b-navbar-item>
@@ -18,8 +16,6 @@
                         <font-awesome-icon :icon="faAddressCard"/> Mas informacion
                     </router-link>
                 </b-navbar-item>
-            </template>
-            <template slot="end">
                 <b-navbar-item>
                     <a href="#footer" title="Contact"><font-awesome-icon :icon="faPhone"/> Contactanos </a>
                 </b-navbar-item>

@@ -1,7 +1,7 @@
 <template>
 	<div class="">
 		<br>
-		<div class="container is-fluid">
+		<div class="container is-fluid" id="products">
 			<div class="columns is-multiline is-tablet is-widescreen is-touch is-mobile">
 				<div
 					class="column is-10 is-offset-1"
@@ -227,8 +227,10 @@ export default {
 <style lang="scss" scoped>
 	@import "@/styles/views/_products.scss";
 
-	.tabs {
-		overflow-x: hidden;
+	@media only screen and (max-width: 769px) {
+		.tabs {
+			overflow-x: hidden;
+		}
 	}
 
 	.divider::after, .divider::before {
