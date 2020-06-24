@@ -106,7 +106,6 @@ export default {
 			featured_categories: [
 				{
 					category: 'Pollo',
-					priority: 1,
 					ima: require('../assets/stockCatalogo/pollo/pollo entero.jpeg'),
 					tab_style: 'tab-pollo',
 					color: '#faff81',
