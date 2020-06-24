@@ -1,5 +1,45 @@
 export default [
     {
+        id: 8,
+        name: 'Pechuga',
+        category: 'Pollo',
+        price: 0.0,
+        path: 'stockCatalogo/pollo/pechuga pollo.jpeg',
+        description: ''
+    },
+    {
+        id: 9,
+        name: 'Pollo Entero',
+        category: 'Pollo',
+        price: 0.0,
+        description: '',
+        path: 'stockCatalogo/pollo/pollo entero.jpeg'
+    },
+    {
+        id: 13,
+        name: 'Pierna y muslo',
+        category: 'Pollo',
+        price: 0.0,
+        path: 'stockCatalogo/pollo/pierna y muslo .jpeg',
+        description: ''
+    },
+    {
+        id: 11,
+        name: 'Retazo',
+        category: 'Pollo',
+        price: 0.0,
+        path:'stockCatalogo/pollo/retazo2.jpg',
+        description: ''
+    },
+    {
+        id: 10,
+        name: 'Pulpa',
+        category: 'Pollo',
+        price: 0.0,
+        path:'stockCatalogo/pollo/pulpa2.jpg',
+        description: ''
+    },
+    {
         id: 2,
         name: 'Ala',
         category: 'Pollo',
@@ -48,51 +88,11 @@ export default [
         description: ''
     },
     {
-        id: 8,
-        name: 'Pechuga',
-        category: 'Pollo',
-        price: 0.0,
-        path: 'stockCatalogo/pollo/pechuga pollo.jpeg',
-        description: ''
-    },
-    {
-        id: 9,
-        name: 'Pollo Entero',
-        category: 'Pollo',
-        price: 0.0,
-        description: '',
-        path: 'stockCatalogo/pollo/pollo entero.jpeg'
-    },
-    {
-        id: 10,
-        name: 'Pulpa',
-        category: 'Pollo',
-        price: 0.0,
-        path:'stockCatalogo/pollo/pulpa2.jpg',
-        description: ''
-    },
-    {
-        id: 11,
-        name: 'Retazo',
-        category: 'Pollo',
-        price: 0.0,
-        path:'stockCatalogo/pollo/retazo2.jpg',
-        description: ''
-    },
-    {
         id: 12,
         name: 'Tender',
         category: 'Pollo',
         price: 0.0,
         path: 'stockCatalogo/pollo/tender1.jpg',
-        description: ''
-    },
-    {
-        id: 13,
-        name: 'Pierna y muslo',
-        category: 'Pollo',
-        price: 0.0,
-        path: 'stockCatalogo/pollo/pierna y muslo .jpeg',
         description: ''
     },
     {
