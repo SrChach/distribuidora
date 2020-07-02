@@ -1,15 +1,14 @@
 <template>
-        <div :class="['box-wrapper', `resaltado-${category}`]">
+        <div :class="['box-wrapper', `resaltado-${category}`]" :style="`background-color: ${color}`">
             <figure class="image is-4by5">
                 <img :src="require(`@/assets/${image}`)" alt="rhcp" />
             </figure>
-            <div class="box-content">
+            <div class="box-content" :style="`background-color: ${color}`">
                 <div class="title">
-                    <span :style="`box-shadow: white 0px -0.175em inset, ${color} 0px 0.1em;`">
-                        {{ product }}
-                    </span>
+                    {{ product }}
                 </div>
-                <!-- <span class="price">{{ price }}</span> -->
+                <div class="desc">{{ category }}</div>
+                <span class="price">${{ price }}</span>
             </div>
         </div>
 </template>
@@ -35,6 +34,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url(https://fonts.googleapis.com/css?family=Satisfy);
+@import url(https://fonts.googleapis.com/css?family=Acme);
 @import '@/styles/components/_product.scss';
 
 .box-wrapper {
@@ -51,29 +52,47 @@ export default {
     }
 }
 
-.title {
-    font-size: 1.3em;
-    font-weight: 600;
-    margin: 1rem 0;
-    font-family: Arial, Helvetica;
-}
-
-@media only screen and (max-width: 1023px) {
-    .title {
-        font-size: 1.2em;
-    }
-}
-
 .box-content{
     position: relative;
     z-index: 1;
 
+    &:before {
+        content: '';
+        width: 200%;
+        height: 100px;
+        position: absolute;
+        display: block;
+        background-color: inherit;
+        transform: rotate(-8deg);
+        top: -50px;
+        left: -10%;
+        z-index: -1;
+    }
+
+    .title {
+        font-size: 1.6em;
+        font-weight: 600;
+        margin: .5rem 0;
+        font-family: 'Acme', sans-serif;
+    }
+
+    .desc {
+        font-family: 'Satisfy', cursive;
+        font-size: 1.2em;
+    }
+
+    @media only screen and (max-width: 1023px) {
+        .title {
+            font-size: 1.3em;
+        }
+    }
+
     .price {
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: 900;
         display: block;
         width: 100px;
-        margin: 20px auto 0;
+        margin: 1em auto 1em;
         position: relative;
         font-family: 'Satisfy', cursive;
 

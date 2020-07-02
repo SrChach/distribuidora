@@ -10,6 +10,19 @@
 					<div class="colums">
 
 						<div class="column is-12">
+							<b-field :label="'Precio máximo seleccionado: ' + selected_price" class="has-text-centered">
+								<b-slider
+									v-model="selected_price"
+									:min="min_price" :max="max_price"
+									:step="0.5"
+									lazy
+									type="is-warning"
+									@change="filtered = get_satisfied()"
+								/>
+							</b-field>
+						</div>
+
+						<div class="column is-12">
 							<div class="tabs is-centered is-toggle">
 								<ul>
 									<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
@@ -41,7 +54,6 @@
 								</ul>
 							</div>
 						</div>
-
 					</div>
 				</div>
 				<div class="column is-10 is-offset-1 scrollsmooth" style="height: 80vh; overflow-y: scroll;">
@@ -60,12 +72,14 @@
 							</div>
 							<div
 								class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen is-2-full-screen"
+								v-show="filtered.includes(product.id)"
 								:key="index"
 							>
 								<productCard
 									:image="product.path"
 									:product="product.name"
 									:category="product.category"
+									:price="product.price"
 									:color="found_featured_color(product.category)"
 								/>
 							</div>
@@ -85,7 +99,7 @@ import productsData from '@/data/products.js'
 
 // Funcionalidad
 import {ItemFilter} from '@/utils/filter.js'
-import { CategorySpecification, OrSpecification, SpecificationBuilder } from '@/utils/specs.js'
+import { CategorySpecification, OrSpecification, SpecificationBuilder, PriceSpecification, AndSpecification } from '@/utils/specs.js'
 import {order_products} from '@/utils/order_products.js'
 
 // Componentes
@@ -103,6 +117,10 @@ export default {
 			filtered: [],
 			categories: [],
 			selected_category: 'Todas',
+			selected_price: 500,
+			max_price: 0,
+			min_price: 0,
+			is_modal_active: true,
 			featured_categories: [
 				{
 					category: 'Pollo',
@@ -159,6 +177,21 @@ export default {
 					return { selected: true, name: category_name } // Convierte a objetos
 				})
 		},
+		get_max_price: function (products) {
+			let array_of_prices = products.map(product => product.price)
+			this.max_price = array_of_prices
+				.reduce((accumulator, currentValue) => {
+					if(currentValue > accumulator)
+						return currentValue
+					return accumulator
+				})
+			this.min_price = array_of_prices
+				.reduce((accumulator, currentValue) => {
+					if(currentValue < accumulator)
+						return currentValue
+					return accumulator
+				})
+		},
 		found_featured_class: function (category) {
 			let founded = this.featured_categories.find(o => o.category == category)
 			if (typeof(founded) == 'undefined')
@@ -183,8 +216,13 @@ export default {
 				...array_category_specs
 			)
 
+			let priceSpecification = new PriceSpecification(0, this.selected_price)
+			let priceAndCategoriesSpecification = new AndSpecification(
+				priceSpecification, allCategoriesSpecification
+			)
+
 			// Obteniendo solo los productos que cumplen las especificaciones
-			let productsThatAccomplish = this.myFilter.filter(this.products, allCategoriesSpecification)
+			let productsThatAccomplish = this.myFilter.filter(this.products, priceAndCategoriesSpecification)
 
 			// Obteniendo un array solo con los id's de los productos que cumplieron
 			return productsThatAccomplish.map(product => product.id)
@@ -204,6 +242,7 @@ export default {
 
 		this.products = order_products(this.products, this.featured_categories)
 		this.categories = this.get_categories(this.products)
+		this.get_max_price(this.products)
 		this.filtered = this.get_satisfied()
 	},
 	watch: {
