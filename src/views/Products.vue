@@ -25,7 +25,7 @@
 						<div class="column is-12">
 							<div class="tabs is-centered is-toggle">
 								<ul>
-									<li @click="selected_category = 'Todas'" :class="(selected_category == 'Todas') ? 'is-active' : '' ">
+									<li :class="(selected_category == 'Todas') ? 'is-active' : '' ">
 										<a href="#category-Pollo">
 											<figure class="image is-32x32 is-hidden-mobile" style="margin-top: .5rem">
 												<img v-show="(selected_category == 'Todas')" src="@/assets/conchitalogo.jpeg">
@@ -36,7 +36,6 @@
 									<li
 										v-for="(category, index) in featured_categories" :key="index"
 										:class= "(selected_category == category.category) ? 'is-active' : ''"
-										@click="selected_category = category.category"
 									>
 										<div class="columns is-multiline is-mobile ">
 											<div class="column is-12">
